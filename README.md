@@ -187,12 +187,13 @@ Tersedia skrip setup idempoten di `deploy/`. Setelah DNS `keuvaweb.com` & `www` 
 # 1. Login ke VPS
 ssh root@IP_VPS
 
-# 2. Ambil repo (sekali saja)
-git clone https://github.com/nervouz18-spec/Keuva-Website.git /opt/keuvaweb
-cd /opt/keuvaweb
+# 2. Ambil repo ke direktori aplikasi (sekali saja)
+sudo mkdir -p /var/www/keuvaweb
+sudo git clone https://github.com/nervouz18-spec/Keuva-Website.git /var/www/keuvaweb
+cd /var/www/keuvaweb
 
 # 3. Setup: pasang nginx + Node 20, swap (bila RAM kecil),
-#    clone/build, konfigurasi nginx, dan HTTPS Let's Encrypt
+#    build, konfigurasi nginx, dan HTTPS Let's Encrypt
 sudo DOMAIN=keuvaweb.com EMAIL=you@example.com bash deploy/setup-vps.sh
 ```
 
