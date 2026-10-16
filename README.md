@@ -93,6 +93,10 @@ Semua variabel bersifat **opsional** — situs tetap berfungsi tanpa konfigurasi
 .
 ├── index.html                     # Shell HTML + meta default + JSON-LD
 ├── vite.config.ts                 # Konfigurasi Vite (+ plugin React & Tailwind)
+├── deploy/
+│   ├── setup-vps.sh               # Setup awal VPS (nginx + Node + build + HTTPS)
+│   ├── update.sh                  # Deploy ulang (git pull + build)
+│   └── nginx.conf                 # Kerangka server block Nginx (manual)
 ├── public/
 │   ├── favicon.svg                # Ikon situs
 │   └── _redirects                 # SPA fallback untuk Netlify/Cloudflare Pages
@@ -175,27 +179,39 @@ Ikon memakai **lucide-react** melalui wrapper `src/components/Icon.tsx`, sehingg
    - **Netlify / Cloudflare Pages** — sudah disediakan `public/_redirects` (`/* /index.html 200`).
    - **Vercel** — tambahkan rewrite `{ "source": "/(.*)", "destination": "/index.html" }`.
 
-### VPS (Nginx)
+### VPS (Ubuntu/Debian + Nginx) — otomatis
 
-Build di lokal lalu unggah `dist/`, atau build di server. Konfigurasi minimal:
+Tersedia skrip setup idempoten di `deploy/`. Setelah DNS `keuvaweb.com` & `www` mengarah ke IP VPS:
+
+```bash
+# 1. Login ke VPS
+ssh root@IP_VPS
+
+# 2. Ambil repo (sekali saja)
+git clone https://github.com/nervouz18-spec/Keuva-Website.git /opt/keuvaweb
+cd /opt/keuvaweb
+
+# 3. Setup: pasang nginx + Node 20, swap (bila RAM kecil),
+#    clone/build, konfigurasi nginx, dan HTTPS Let's Encrypt
+sudo DOMAIN=keuvaweb.com EMAIL=you@example.com bash deploy/setup-vps.sh
+```
+
+Skrip melakukan: `apt` update → `nginx`/`git`/`curl` → swap 1 GB bila RAM < 2 GB → Node.js 20 → clone & `npm run build` ke `/var/www/keuvaweb/dist` → tulis server block Nginx (SPA fallback + cache aset + gzip + header keamanan) → `certbot --nginx` (HTTPS + redirect).
+
+**Deploy pembaruan** setiap kali ada perubahan di `main`:
+
+```bash
+sudo bash /var/www/keuvaweb/deploy/update.sh
+```
+
+### VPS manual (tanpa skrip)
+
+Jika lebih suka manual, tersedia `deploy/nginx.conf` sebagai kerangka server block. Inti konfigurasinya:
 
 ```nginx
-server {
-    listen 80;
-    server_name keuvaweb.com www.keuvaweb.com;
-    root /var/www/keuvaweb/dist;
-
-    # SPA fallback
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-
-    # Cache aset ber-hash
-    location /assets/ {
-        expires 1y;
-        add_header Cache-Control "public, immutable";
-    }
-}
+root /var/www/keuvaweb/dist;
+location / { try_files $uri $uri/ /index.html; }
+location /assets/ { expires 1y; add_header Cache-Control "public, immutable"; }
 ```
 
 Lalu amankan dengan HTTPS gratis:
@@ -203,6 +219,8 @@ Lalu amankan dengan HTTPS gratis:
 ```bash
 sudo certbot --nginx -d keuvaweb.com -d www.keuvaweb.com
 ```
+
+> Catatan: bila repo bersifat privat, `git clone` di VPS butuh kredensial (deploy key atau Personal Access Token).
 
 ### Apache
 
