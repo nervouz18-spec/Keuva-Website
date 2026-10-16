@@ -19,7 +19,7 @@ const CASE_STUDIES: CaseStudy[] = [
     loadSpeed: '0.62 detik',
     bounceRateChange: 'Turun 54%',
     imageUrl:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuCGlqkOCosPVRXvYZM96ctk1kfiU2dzybng0itMHy8JNC3MNvIFee-eIxgD_B3gPylXejYsQEjFrafzIedcD-JejQDaDoRge-ZkrTiTGX3H0U8AkX1ZvgTHgqb6WZjjUlcqqNWey0mhRT0AfIJcmarvAJRHT2KrjFxfuEv8vfW61_C49YrFBEjSyWlvJFgguC7JX0BpbIjh-GvNYJEUm138Z29_G_XpOHq5AlJLtcd_tWhu4SHYWIqk',
+      '/images/case-fintech.webp',
     imageAlt: 'PT Finansia Solusi B2B Portal',
     tags: ['Next.js 14', 'HubSpot CRM Sync', 'Tailwind CSS', 'PostgreSQL'],
     results: [
@@ -41,7 +41,7 @@ const CASE_STUDIES: CaseStudy[] = [
     loadSpeed: '0.74 detik',
     bounceRateChange: 'Turun 42%',
     imageUrl:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuB6ilC_ZCNAgpaDOIGyk7_-sr88MzHzVpnB3NlTEhCLP5gudCvlBw-ZhO9SPp9Ej9YkqmQLk9fg25NlrmNqpUcbVUCq2Cv4Da4Qk10Y3FT0Kq26VUPTvcfx_Acswmap1gTUZdfUVYRtdT4ull3W29Sl21KAPax6lEf68m2cdomfZEHoDD7dw-3VQnsh8f85uEMynfojICTixtNqXMucAo7W9CPRlROKMsDHynScdyrcyzE2KcUdFaMy',
+      '/images/case-ecommerce.webp',
     imageAlt: 'AURA Label Luxury E-Commerce',
     tags: ['Headless Shopify', 'Midtrans Gateway', 'RajaOngkir API', 'Redis'],
     results: [
@@ -63,7 +63,7 @@ const CASE_STUDIES: CaseStudy[] = [
     loadSpeed: '0.58 detik',
     bounceRateChange: 'Turun 68%',
     imageUrl:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBSBUWBrQ24tb9S2UGzYvXjmT24pT5bpQKGsA0skKY9YvOSlXzeybiWmfzitu0re_nSR3TOBlMRWQq9GWsV1wyqqBr35rKJvvIID_gcAR_DpLim89fv5u0Bl5h6RoOLaPBQC0p7Pgom39TB2Lssm79H7uDLOkjSizRuZDTrs5edoq4Gm2sEcsui7jNNuWPjHJTjsQIZSY0p6i-bx6fAPUSpph_eZjjjpC0PCC5-x7dY2eiVlL-msGmh',
+      '/images/case-industry.webp',
     imageAlt: 'PT Mitra Perkasa Teknik Heavy Machinery',
     tags: ['Bilingual ID/EN', 'Cloudflare Enterprise', 'Schema B2B', 'React SSR'],
     results: [

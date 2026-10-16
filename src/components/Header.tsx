@@ -33,7 +33,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onOpenConsultation })
           <img
             alt="KeuvaWeb Logo"
             className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-            src="https://lh3.googleusercontent.com/aida/AEtjO1W1vH4LXSlCaaFpkznoISURUEb6o8QJa8T-fZnMpo_yrBZECJa-sBhGSYtXQat_jujjQq68HU0GyLeXohQJrVE0tDydU2DICOaELGdVeFMiZi7J8pP5yCbamI1RTCfVfkcrGHlfZutkfKzLFnmeH7NhPS105cA8GtILLA96KSZ5DJw9j2vK7sVBrs57nvlYmUb7yVHHitwnfppSdLUuDGnXp9tUSBuupiIUW35OEWEG5xH80fo_gybf4Q"
+            src="/images/logo.webp"
           />
           <span className="font-display text-xl font-bold tracking-tight text-[#dfe2f1] group-hover:text-white transition-colors">
             KeuvaWeb
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onOpenConsultation })
           <img
             alt="Lead Engineer Profile"
             className="w-8 h-8 rounded-full object-cover ring-1 ring-white/20 hidden md:block"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBf_KOfi6E2OGNOz1x5mjQEKvGZoxBD5P2IoHeeU-MgwWGUce_L98NRDVUIFd8hrOydKtQur9X_JFxDKeBKEn6xhxXiZkyV8CBOEq8HCJyeYMDNPmD1_ygX3arqh_VtGfVLYr1_LRjoV1T6GltoPnd0nAh00oqcjlT-HePSFaZJV1_Bec9Y7zf6m_ErfMzAC8yFLGmRKmEBtGx3kmomr0LbOrcoikXs8yYtcK87bINWlvFaPwn-QQ0V"
+            src="/images/avatar-engineer.webp"
           />
 
           {/* Mobile Menu Toggle */}

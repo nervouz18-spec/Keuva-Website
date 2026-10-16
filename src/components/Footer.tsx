@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
               <img
                 alt="KeuvaWeb Logo"
                 className="h-7 w-auto object-contain"
-                src="https://lh3.googleusercontent.com/aida/AEtjO1W1vH4LXSlCaaFpkznoISURUEb6o8QJa8T-fZnMpo_yrBZECJa-sBhGSYtXQat_jujjQq68HU0GyLeXohQJrVE0tDydU2DICOaELGdVeFMiZi7J8pP5yCbamI1RTCfVfkcrGHlfZutkfKzLFnmeH7NhPS105cA8GtILLA96KSZ5DJw9j2vK7sVBrs57nvlYmUb7yVHHitwnfppSdLUuDGnXp9tUSBuupiIUW35OEWEG5xH80fo_gybf4Q"
+                src="/images/logo.webp"
               />
               <span className="font-display text-xl font-bold text-[#dfe2f1]">
                 KeuvaWeb

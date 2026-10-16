@@ -168,7 +168,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
               <div className="relative h-[300px] sm:h-[420px] md:h-[500px] w-full bg-[#0a0e18]">
                 <LazyImage
                   priority={true}
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1-_42YL_WCboVhMOszZn7E6x8VYPekIvkxO2zvLgBs8rcrkULFoLipaH3f0kXe9KZ4ye7s4ob7sIhB-hwNnToVfDJC-5LyxaaiVrk0baDjpPCqDQE3scg2-TjfJ2xlQpnLrcyIbyc-doz5TITFR9VtijQGDHMq7y5J9-YNLM515vjzbFKco63RgCN0ssaWoe4mDPMFszt6zEaTLkKHTMas2rrIGMSkDMS0fEg9coEUtC81mGxZvaZ"
+                  src="/images/beranda-hero.webp"
                   alt="Enterprise Dashboard Showcase Mockup"
                   className="w-full h-full object-cover"
                 />
@@ -425,7 +425,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
             <div className="lg:col-span-7 p-6 rounded-2xl bg-[#171b26] flex flex-col justify-between shadow-lg border border-white/5 group">
               <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-5 bg-[#1c1f2a]">
                 <LazyImage
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGlqkOCosPVRXvYZM96ctk1kfiU2dzybng0itMHy8JNC3MNvIFee-eIxgD_B3gPylXejYsQEjFrafzIedcD-JejQDaDoRge-ZkrTiTGX3H0U8AkX1ZvgTHgqb6WZjjUlcqqNWey0mhRT0AfIJcmarvAJRHT2KrjFxfuEv8vfW61_C49YrFBEjSyWlvJFgguC7JX0BpbIjh-GvNYJEUm138Z29_G_XpOHq5AlJLtcd_tWhu4SHYWIqk"
+                  src="/images/case-fintech.webp"
                   alt="PT Finansia Solusi Nusantara web architecture"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -464,7 +464,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
             <div className="lg:col-span-5 p-6 rounded-2xl bg-[#171b26] flex flex-col justify-between shadow-lg border border-white/5 group">
               <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-5 bg-[#1c1f2a]">
                 <LazyImage
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6ilC_ZCNAgpaDOIGyk7_-sr88MzHzVpnB3NlTEhCLP5gudCvlBw-ZhO9SPp9Ej9YkqmQLk9fg25NlrmNqpUcbVUCq2Cv4Da4Qk10Y3FT0Kq26VUPTvcfx_Acswmap1gTUZdfUVYRtdT4ull3W29Sl21KAPax6lEf68m2cdomfZEHoDD7dw-3VQnsh8f85uEMynfojICTixtNqXMucAo7W9CPRlROKMsDHynScdyrcyzE2KcUdFaMy"
+                  src="/images/case-ecommerce.webp"
                   alt="AURA Label fast online store redesign"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -500,7 +500,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
             <div className="lg:col-span-12 p-6 md:p-8 rounded-2xl bg-[#262a35] flex flex-col lg:flex-row items-center gap-8 shadow-xl border border-white/10">
               <div className="w-full lg:w-1/2 relative h-64 md:h-80 rounded-xl overflow-hidden bg-[#1c1f2a]">
                 <LazyImage
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSBUWBrQ24tb9S2UGzYvXjmT24pT5bpQKGsA0skKY9YvOSlXzeybiWmfzitu0re_nSR3TOBlMRWQq9GWsV1wyqqBr35rKJvvIID_gcAR_DpLim89fv5u0Bl5h6RoOLaPBQC0p7Pgom39TB2Lssm79H7uDLOkjSizRuZDTrs5edoq4Gm2sEcsui7jNNuWPjHJTjsQIZSY0p6i-bx6fAPUSpph_eZjjjpC0PCC5-x7dY2eiVlL-msGmh"
+                  src="/images/case-industry.webp"
                   alt="PT Mitra Perkasa Teknik Heavy Industry"
                   className="w-full h-full object-cover"
                 />
@@ -827,7 +827,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
               <div className="flex items-center gap-3 pt-6 mt-6 border-t border-white/5">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-[#262a35] shrink-0">
                   <LazyImage
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRmTXJ6TYyfrCpWe-EUARrNQEmjVutVHqdOK-fm6BP6J7xr3ksJ3ynSIATcIRTmc6j9joY7kARlpvQiH6W3sdw4KD3HuXqiOQewzgZsthlpQABzZyMqkjr3kodq8xO1S1nUNKnVbsitu4SYzZHn79y209RwIS0VcNShXgbUXUfRWHWttJ38F7zXfBdAVSuMMtToWFwKMypCWeKjUpH9H2IDNhwTuHRK0LFuM-0xxMg58uYoOMWpAUL"
+                    src="/images/testi-hendrawan.webp"
                     alt="Hendrawan Pratama"
                     className="w-full h-full object-cover"
                   />
@@ -861,7 +861,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
               <div className="flex items-center gap-3 pt-6 mt-6 border-t border-white/5">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-[#262a35] shrink-0">
                   <LazyImage
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFM9-2NYaT8dVkHMgs4zb_U-rJuwFNj5TB6X19P2Cgju3MeJyqdpAR7vW33TK1WVfF9oAByEQpC33dtuJNTV3a8Iafj_5uGLweTBVbfguUifoGjIKsATaGruCSB_5tS_-eaTWgOi0dmXoTtocTkYm0-1U41sJLXb4wj68QFHMEUm84YJm7dr_llNJAaRQE3fPGujqsX69Qb4476CUGiJOmW-gCq_Jv66JX3cRkceDBq2AHdUr_NfW6"
+                    src="/images/testi-clarissa.webp"
                     alt="Clarissa Novita"
                     className="w-full h-full object-cover"
                   />
@@ -893,7 +893,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
               <div className="flex items-center gap-3 pt-6 mt-6 border-t border-white/5">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-[#262a35] shrink-0">
                   <LazyImage
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ0rBpPEAa8WMiLaDy6hIfTx4H651nU0VWR4DST8XSCa-EWbgBDTw70dSDYoCWMYQGFILBfRKv8_rtrircIMl5AgQR4TXZiMfjbcqHwXN_APcCFfnZDrrJUE0goqRS3MTxNdZTTxydeaLN8UdmPI079NcSa5eDXNgAnGsRNg_UH7Ceja-Ls484um-tiMw2ZcaxHzjnhzTqNYfynTJizrvJScDMpeWq5Pk_CH0FGPI7lfHW1PyrTOMB"
+                    src="/images/testi-bambang.webp"
                     alt="Ir. Bambang Sudirman"
                     className="w-full h-full object-cover"
                   />

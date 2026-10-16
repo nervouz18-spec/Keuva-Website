@@ -49,8 +49,8 @@ export function showBrowserPushNotification(title: string, options?: Notificatio
   if (Notification.permission === 'granted') {
     try {
       new Notification(title, {
-        icon: 'https://lh3.googleusercontent.com/aida/AEtjO1W1vH4LXSlCaaFpkznoISURUEb6o8QJa8T-fZnMpo_yrBZECJa-sBhGSYtXQat_jujjQq68HU0GyLeXohQJrVE0tDydU2DICOaELGdVeFMiZi7J8pP5yCbamI1RTCfVfkcrGHlfZutkfKzLFnmeH7NhPS105cA8GtILLA96KSZ5DJw9j2vK7sVBrs57nvlYmUb7yVHHitwnfppSdLUuDGnXp9tUSBuupiIUW35OEWEG5xH80fo_gybf4Q',
-        badge: 'https://lh3.googleusercontent.com/aida/AEtjO1W1vH4LXSlCaaFpkznoISURUEb6o8QJa8T-fZnMpo_yrBZECJa-sBhGSYtXQat_jujjQq68HU0GyLeXohQJrVE0tDydU2DICOaELGdVeFMiZi7J8pP5yCbamI1RTCfVfkcrGHlfZutkfKzLFnmeH7NhPS105cA8GtILLA96KSZ5DJw9j2vK7sVBrs57nvlYmUb7yVHHitwnfppSdLUuDGnXp9tUSBuupiIUW35OEWEG5xH80fo_gybf4Q',
+        icon: '/images/logo.webp',
+        badge: '/images/logo.webp',
         ...options,
       });
     } catch (e) {

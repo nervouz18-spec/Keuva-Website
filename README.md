@@ -99,6 +99,9 @@ Semua variabel bersifat **opsional** — situs tetap berfungsi tanpa konfigurasi
 │   └── nginx.conf                 # Kerangka server block Nginx (manual)
 ├── public/
 │   ├── favicon.svg                # Ikon situs
+│   ├── robots.txt                 # Izin crawler + lokasi sitemap
+│   ├── sitemap.xml                # 9 URL untuk keuva.shop
+│   ├── images/                    # Gambar lokal (WebP, hasil konversi)
 │   └── _redirects                 # SPA fallback untuk Netlify/Cloudflare Pages
 └── src/
     ├── main.tsx                   # Entry React (BrowserRouter)
@@ -126,6 +129,12 @@ Semua variabel bersifat **opsional** — situs tetap berfungsi tanpa konfigurasi
         └── notificationService.ts # Simulasi push notification
 ```
 
+### Performa
+
+- **Code-splitting per rute** — setiap halaman di-melalui `React.lazy` (`src/App.tsx`), sehingga bundle awal turun dari ~488 kB jadi ~319 kB (gzip ~101 kB). Chunk halaman (BerandaView, LayananView, dll.) dimuat on-demand, dengan fallback spinner saat transisi.
+- **Gambar lokal** — seluruh gambar tersimpan di `public/images/*.webp` (konversi dari ~393 kB menjadi ~173 kB, −56%), tanpa hotlink ke pihak ketiga.
+- **Ikon lucide-react** — hanya ikon yang dipakai yang masuk bundle.
+
 ## Routing & SEO
 
 Navigasi memakai **React Router** dengan URL path asli:
@@ -146,7 +155,9 @@ Judul dan meta description berubah per halaman (lihat `src/routes.ts`), dan link
 
 Karena ini SPA, hosting **wajib punya fallback ke `index.html`** agar reload langsung di `/layanan` tidak 404 — lihat [Deployment](#deployment).
 
-Untuk SEO maksimal (HTML statis per halaman alih-alih render client-side), tambahkan prerender/SSG (mis. `vike`, Vercel prerender, atau prerender.io) dan daftarkan `sitemap.xml` sesuai domain asli.
+`robots.txt` dan `sitemap.xml` (9 URL) sudah tersedia di `public/` dan ikut ter-deploy sebagai berkas statis di akar domain. Perbarui `lastmod` di sitemap saat ada perubahan konten.
+
+Untuk SEO maksimal (HTML statis per halaman alih-alih render client-side), tambahkan prerender/SSG (mis. `vike`, Vercel prerender, atau prerender.io) — isinya sudah siap dari `sitemap.xml`.
 
 ## Formulir Lead
 

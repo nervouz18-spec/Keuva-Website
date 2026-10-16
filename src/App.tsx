@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import {
   BrowserRouter,
   Navigate,
@@ -10,16 +10,45 @@ import {
 import { NavTab } from './types';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { BerandaView } from './components/BerandaView';
-import { LayananView } from './components/LayananView';
-import { PaketHargaView } from './components/PaketHargaView';
-import { PortofolioView } from './components/PortofolioView';
-import { ProsesView } from './components/ProsesView';
-import { KontakView } from './components/KontakView';
 import { KonsultasiModal } from './components/KonsultasiModal';
-import { LegalView } from './components/LegalView';
 import { trackPageView } from './services/analytics';
 import { LEGAL_META, PATH_TABS, ROUTE_META, TAB_PATHS } from './routes';
+
+// Code-splitting per rute: tiap halaman dimuat on-demand, sehingga bundle
+// awal hanya berisi shell (Header, Footer, modal) + framework React.
+const BerandaView = lazy(() =>
+  import('./components/BerandaView').then((m) => ({ default: m.BerandaView }))
+);
+const LayananView = lazy(() =>
+  import('./components/LayananView').then((m) => ({ default: m.LayananView }))
+);
+const PaketHargaView = lazy(() =>
+  import('./components/PaketHargaView').then((m) => ({ default: m.PaketHargaView }))
+);
+const PortofolioView = lazy(() =>
+  import('./components/PortofolioView').then((m) => ({ default: m.PortofolioView }))
+);
+const ProsesView = lazy(() =>
+  import('./components/ProsesView').then((m) => ({ default: m.ProsesView }))
+);
+const KontakView = lazy(() =>
+  import('./components/KontakView').then((m) => ({ default: m.KontakView }))
+);
+const LegalView = lazy(() =>
+  import('./components/LegalView').then((m) => ({ default: m.LegalView }))
+);
+
+function RouteFallback() {
+  return (
+    <div
+      className="flex min-h-[50vh] items-center justify-center"
+      role="status"
+      aria-label="Memuat halaman"
+    >
+      <div className="h-9 w-9 animate-spin rounded-full border-2 border-white/10 border-t-[#4d8eff]" />
+    </div>
+  );
+}
 
 function AppShell() {
   const location = useLocation();
@@ -65,55 +94,57 @@ function AppShell() {
 
       {/* Main Content Area */}
       <main className="flex-1 w-full pt-20">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <BerandaView
-                onTabChange={handleTabChange}
-                onOpenConsultation={() => handleOpenConsultation('landing')}
-              />
-            }
-          />
-          <Route
-            path="/layanan"
-            element={
-              <LayananView
-                onTabChange={handleTabChange}
-                onOpenConsultation={() => handleOpenConsultation('compro')}
-              />
-            }
-          />
-          <Route
-            path="/paket-harga"
-            element={
-              <PaketHargaView
-                onTabChange={handleTabChange}
-                onOpenConsultation={() => handleOpenConsultation('business')}
-              />
-            }
-          />
-          <Route
-            path="/portofolio"
-            element={
-              <PortofolioView onOpenConsultation={() => handleOpenConsultation('custom')} />
-            }
-          />
-          <Route
-            path="/proses"
-            element={
-              <ProsesView
-                onTabChange={handleTabChange}
-                onOpenConsultation={() => handleOpenConsultation('compro')}
-              />
-            }
-          />
-          <Route path="/kontak" element={<KontakView />} />
-          <Route path="/kebijakan-privasi" element={<LegalView kind="privacy" />} />
-          <Route path="/ketentuan-layanan" element={<LegalView kind="terms" />} />
-          <Route path="/keamanan" element={<LegalView kind="security" />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+        <Suspense fallback={<RouteFallback />}>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <BerandaView
+                  onTabChange={handleTabChange}
+                  onOpenConsultation={() => handleOpenConsultation('landing')}
+                />
+              }
+            />
+            <Route
+              path="/layanan"
+              element={
+                <LayananView
+                  onTabChange={handleTabChange}
+                  onOpenConsultation={() => handleOpenConsultation('compro')}
+                />
+              }
+            />
+            <Route
+              path="/paket-harga"
+              element={
+                <PaketHargaView
+                  onTabChange={handleTabChange}
+                  onOpenConsultation={() => handleOpenConsultation('business')}
+                />
+              }
+            />
+            <Route
+              path="/portofolio"
+              element={
+                <PortofolioView onOpenConsultation={() => handleOpenConsultation('custom')} />
+              }
+            />
+            <Route
+              path="/proses"
+              element={
+                <ProsesView
+                  onTabChange={handleTabChange}
+                  onOpenConsultation={() => handleOpenConsultation('compro')}
+                />
+              }
+            />
+            <Route path="/kontak" element={<KontakView />} />
+            <Route path="/kebijakan-privasi" element={<LegalView kind="privacy" />} />
+            <Route path="/ketentuan-layanan" element={<LegalView kind="terms" />} />
+            <Route path="/keamanan" element={<LegalView kind="security" />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
       </main>
 
       {/* Footer */}

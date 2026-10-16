@@ -250,7 +250,7 @@ export const LayananView: React.FC<LayananViewProps> = ({
                 <div className="lg:col-span-5 flex flex-col gap-4">
                   <div className="relative overflow-hidden rounded-xl bg-[#1c1f2a] shadow-2xl group border border-white/5">
                     <LazyImage
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAH3JuSJwlyQzJDpmKVUJdyTUpYSINYcMym6n8dT7fKgWkVbW21hx8QXCF81jbgr9W6m2FEb62CQSwN7dmEkJSQl7gKWMFi62zyja1sbRKfBDq57nO299qmrPMpJLVzUst0NYxi_DUkSRBLfy9h9n8IrN6d367Hwl7juyW0ecXVN4ky0Y2JU-RC3qSaE6tbf8ZOCpHfeN4XbkuXfDti-kYZ8eCj1CXEpBNrEqbqKkOjzW28yFkQio3M"
+                      src="/images/layanan-landing.webp"
                       alt="High converting SaaS landing page analytics mockup"
                       className="w-full h-80 object-cover object-top transition-transform duration-700 group-hover:scale-105"
                     />
@@ -281,7 +281,7 @@ export const LayananView: React.FC<LayananViewProps> = ({
                 <div className="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-4">
                   <div className="relative overflow-hidden rounded-xl bg-[#1c1f2a] shadow-2xl group border border-white/5">
                     <LazyImage
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBO35wX1LAuQZK3Q_rETQiDZV_wM6ldnNALB4nEMSIvzXjxRwhyD2E5Qnk3LNhvhtPt4yHd0SyTW3H0oGlwdSnSzeMEP5KdugYn9Nact3lB4pgmShI8C-AFjk2WZDAK_KlsNW-zZyrs-FUHdoDCEeUpM_wClQamMas66lRh_oYarYZj3deVbLu-AHWNQ98veagTNVG9j870bjEOxnPTcjYYjyve1_sbgfUyOhF4SFWg5svZ7CoFB9rx"
+                      src="/images/layanan-corporate.webp"
                       alt="Corporate enterprise web mockup"
                       className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
                     />
@@ -462,7 +462,7 @@ export const LayananView: React.FC<LayananViewProps> = ({
                 <div className="lg:col-span-5 flex flex-col gap-4">
                   <div className="relative overflow-hidden rounded-xl bg-[#1c1f2a] shadow-2xl group border border-white/5">
                     <LazyImage
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuACXwWs04mohB8CvHG_KB2PRWF9c5V_nl1NedDzve88VN0DDKcWlz3QQ_LQyTrpgWhXaQP35OOC6Hn3DtaYSfVb6C3fsbc0tDomxVtDeOPQko7KW7K3auuUTLDUBRv74_I-t8U_moufZIHd5C0c0gcBFJ9s3F9_8Cjayi15mcRaQUjKZXnkVHjcLfjNJUmI22NDvXuIP10mNqdmoFcHB1jGgmCje5_qlXF71icDYfl6C-piB5w-pX0C"
+                      src="/images/layanan-ecommerce.webp"
                       alt="Modern Indonesian e-commerce checkout showcase"
                       className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
                     />
