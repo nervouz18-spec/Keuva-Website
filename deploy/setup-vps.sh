@@ -4,10 +4,10 @@
 # Idempoten: aman dijalankan berulang.
 #
 # Pemakaian:
-#   sudo DOMAIN=keuvaweb.com EMAIL=you@example.com bash deploy/setup-vps.sh
+#   sudo DOMAIN=keuva.shop EMAIL=you@example.com bash deploy/setup-vps.sh
 #
 # Variabel lingkungan (opsional):
-#   DOMAIN    domain utama             (default: keuvaweb.com)
+#   DOMAIN    domain utama             (default: keuva.shop)
 #   REPO_URL  URL repo git             (default: repo GitHub KeuvaWeb)
 #   APP_DIR   direktori aplikasi       (default: /var/www/keuvaweb)
 #   EMAIL     email untuk Let's Encrypt (wajib bila ingin HTTPS)
@@ -15,7 +15,7 @@
 
 set -euo pipefail
 
-DOMAIN="${DOMAIN:-keuvaweb.com}"
+DOMAIN="${DOMAIN:-keuva.shop}"
 REPO_URL="${REPO_URL:-https://github.com/nervouz18-spec/Keuva-Website.git}"
 APP_DIR="${APP_DIR:-/var/www/keuvaweb}"
 BRANCH="${BRANCH:-main}"

@@ -84,7 +84,7 @@ Semua variabel bersifat **opsional** — situs tetap berfungsi tanpa konfigurasi
 | -------------------------- | ------------------------------------------------------------------------- | -------------------------- |
 | `VITE_LEADS_WEBHOOK_URL`   | Endpoint POST JSON penerima data lead (Apps Script, Formspree, Web3Forms, API sendiri). Kosong = fallback WhatsApp. | `https://script.google.com/.../exec` |
 | `VITE_GA4_ID`              | Measurement ID Google Analytics 4                                         | `G-XXXXXXXXXX`             |
-| `VITE_PLAUSIBLE_DOMAIN`    | Domain yang didaftarkan di Plausible                                      | `keuvaweb.com`             |
+| `VITE_PLAUSIBLE_DOMAIN`    | Domain yang didaftarkan di Plausible                                      | `keuva.shop`             |
 | `VITE_PLAUSIBLE_HOST`      | Opsional, untuk Plausible self-hosted                                     | `https://plausible.io`     |
 
 ## Struktur Proyek
@@ -181,7 +181,7 @@ Ikon memakai **lucide-react** melalui wrapper `src/components/Icon.tsx`, sehingg
 
 ### VPS (Ubuntu/Debian + Nginx) — otomatis
 
-Tersedia skrip setup idempoten di `deploy/`. Setelah DNS `keuvaweb.com` & `www` mengarah ke IP VPS:
+Tersedia skrip setup idempoten di `deploy/`. Setelah DNS `keuva.shop` & `www` mengarah ke IP VPS:
 
 ```bash
 # 1. Login ke VPS
@@ -194,7 +194,7 @@ cd /var/www/keuvaweb
 
 # 3. Setup: pasang nginx + Node 20, swap (bila RAM kecil),
 #    build, konfigurasi nginx, dan HTTPS Let's Encrypt
-sudo DOMAIN=keuvaweb.com EMAIL=you@example.com bash deploy/setup-vps.sh
+sudo DOMAIN=keuva.shop EMAIL=you@example.com bash deploy/setup-vps.sh
 ```
 
 Skrip melakukan: `apt` update → `nginx`/`git`/`curl` → swap 1 GB bila RAM < 2 GB → Node.js 20 → clone & `npm run build` ke `/var/www/keuvaweb/dist` → tulis server block Nginx (SPA fallback + cache aset + gzip + header keamanan) → `certbot --nginx` (HTTPS + redirect).
@@ -218,7 +218,7 @@ location /assets/ { expires 1y; add_header Cache-Control "public, immutable"; }
 Lalu amankan dengan HTTPS gratis:
 
 ```bash
-sudo certbot --nginx -d keuvaweb.com -d www.keuvaweb.com
+sudo certbot --nginx -d keuva.shop -d www.keuva.shop
 ```
 
 > Catatan: bila repo bersifat privat, `git clone` di VPS butuh kredensial (deploy key atau Personal Access Token).

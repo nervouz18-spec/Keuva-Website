@@ -157,7 +157,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                 </div>
                 <div className="px-4 py-1 rounded bg-[#1c1f2a] text-xs font-mono text-[#c2c6d6] flex items-center gap-1.5 border border-white/5">
                   <Icon name="lock" className=" text-sm text-[#4cd7f6]" />
-                  <span>https://keuvaweb.com/enterprise-showcase</span>
+                  <span>https://keuva.shop/enterprise-showcase</span>
                 </div>
                 <div className="flex items-center gap-2 text-[#8c909f]">
                   <Icon name="more_vert" className=" text-sm" />
