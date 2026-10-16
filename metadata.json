@@ -1,0 +1,5 @@
+{
+  "name": "KeuvaWeb - Rekayasa Website Konversi Tertinggi",
+  "description": "Studio rekayasa arsitektur web performa tinggi dengan skor PageSpeed 95+, UX persuasif berorientasi konversi, push notifikasi interaktif, dan kalkulator estimasi investasi transparan.",
+  "requestFramePermissions": ["notifications"]
+}
