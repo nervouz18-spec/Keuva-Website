@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onOpenConsultation })
           <img
             alt="KeuvaWeb Logo"
             className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-            src="/images/logo.webp"
+            src="/favicon.svg"
           />
           <span className="font-display text-xl font-bold tracking-tight text-on-surface group-hover:text-ink-strong transition-colors">
             KeuvaWeb

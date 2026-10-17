@@ -18,7 +18,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenConsultation }) => {
               <img
                 alt="KeuvaWeb Logo"
                 className="h-7 w-auto object-contain"
-                src="/images/logo.webp"
+                src="/favicon.svg"
               />
               <span className="font-display text-xl font-bold text-on-surface">
                 KeuvaWeb
