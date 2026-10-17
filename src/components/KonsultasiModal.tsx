@@ -1,4 +1,5 @@
 import { Icon } from './Icon';
+import { useAvailability } from '../hooks/useAvailability';
 import React, { useEffect } from 'react';
 import { useLeadForm } from '../hooks/useLeadForm';
 
@@ -17,6 +18,7 @@ export const KonsultasiModal: React.FC<KonsultasiModalProps> = ({
     source: 'modal-konsultasi',
     defaultProjectType: defaultPlan,
   });
+  const availability = useAvailability();
   const {
     name,
     setName,
@@ -88,7 +90,11 @@ export const KonsultasiModal: React.FC<KonsultasiModalProps> = ({
         {/* Header bar */}
         <div className="p-5 bg-surface-container border-b border-line flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse" />
+            <span
+              className={`w-2.5 h-2.5 rounded-full ${
+                availability.isOpen ? 'bg-success animate-pulse' : 'bg-outline'
+              }`}
+            />
             <h3
               id="konsultasi-modal-title"
               className="font-display font-bold text-base text-on-surface"
@@ -96,6 +102,13 @@ export const KonsultasiModal: React.FC<KonsultasiModalProps> = ({
               Inisiasi Proyek & Konsultasi Arsitektur
             </h3>
           </div>
+          <span
+            className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold border bg-surface-container-high shrink-0 ${
+              availability.isOpen ? 'text-success border-success/40' : 'text-outline border-line-strong'
+            }`}
+          >
+            {availability.isOpen ? 'Online' : 'Offline'}
+          </span>
           <button
             onClick={onClose}
             aria-label="Tutup jendela"

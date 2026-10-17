@@ -77,6 +77,29 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
     },
   ];
 
+  const comparisonRows: { label: string; starter: string; business: string; system: string }[] = [
+    { label: 'Harga', starter: 'Rp 1.500.000', business: 'Rp 3.500.000', system: 'Mulai Rp 6.000.000' },
+    { label: 'Estimasi pengerjaan', starter: '3-7 hari kerja', business: '7-14 hari kerja', system: '2-5 minggu' },
+    { label: 'Jumlah halaman', starter: 'Landing page', business: 'Hingga 6 halaman', system: 'Tak terbatas' },
+    { label: 'Tingkat desain', starter: 'Responsif', business: 'Semi-custom', system: 'Custom penuh' },
+    { label: 'Form kontak & WhatsApp', starter: '✓', business: '✓', system: '✓' },
+    { label: 'SEO dasar', starter: '✓', business: '✓', system: '✓' },
+    { label: 'Katalog produk / layanan', starter: '—', business: '✓', system: '✓' },
+    { label: 'Integrasi API', starter: '—', business: 'Opsional', system: '✓' },
+    { label: 'Login & hak akses pengguna', starter: '—', business: '—', system: '✓' },
+    { label: 'Database & CRUD', starter: '—', business: '—', system: '✓' },
+    { label: 'Dashboard admin', starter: '—', business: '—', system: '✓' },
+    { label: 'Laporan dasar', starter: '—', business: '—', system: '✓' },
+    { label: 'Jumlah revisi', starter: '2 kali', business: '3 kali', system: 'Sesuai kesepakatan' },
+    { label: 'Onboarding & dokumentasi', starter: 'Panduan ringkas', business: 'Panduan ringkas', system: 'Walkthrough 30-45 menit' },
+  ];
+
+  const renderComparisonCell = (value: string) => {
+    if (value === '✓') return <span className="text-success font-bold">✓</span>;
+    if (value === '—') return <span className="text-outline">—</span>;
+    return <span className="text-on-surface">{value}</span>;
+  };
+
   return (
     <div className="w-full">
       {/* Glow Ambient Canvas Effects */}
@@ -351,6 +374,62 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Perbandingan Antar Paket */}
+        <section className="max-w-[1280px] mx-auto px-5 md:px-12 pb-4">
+          <div className="rounded-3xl bg-surface-container-low border border-line overflow-hidden">
+            <div className="px-6 md:px-10 py-6 border-b border-line">
+              <h2 className="font-display text-xl md:text-2xl text-on-surface font-bold">
+                Perbandingan Antar Paket
+              </h2>
+              <p className="text-xs text-outline mt-1">
+                Rincian apa saja yang termasuk di setiap tingkatan sebelum Anda memutuskan.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[720px] text-left border-collapse">
+                <thead>
+                  <tr className="bg-surface-container-high">
+                    <th className="px-5 py-3 text-[11px] uppercase font-bold text-outline tracking-wider">
+                      Fitur
+                    </th>
+                    <th className="px-5 py-3 text-[11px] uppercase font-bold text-on-surface tracking-wider">
+                      Starter
+                    </th>
+                    <th className="px-5 py-3 text-[11px] uppercase font-bold text-primary tracking-wider">
+                      Business
+                    </th>
+                    <th className="px-5 py-3 text-[11px] uppercase font-bold text-on-surface tracking-wider">
+                      System
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-line">
+                  {comparisonRows.map((row) => (
+                    <tr key={row.label} className="hover:bg-surface-container transition-colors">
+                      <td className="px-5 py-3 text-xs text-on-surface-variant">{row.label}</td>
+                      <td className="px-5 py-3 text-xs">{renderComparisonCell(row.starter)}</td>
+                      <td className="px-5 py-3 text-xs bg-primary-container/5">
+                        {renderComparisonCell(row.business)}
+                      </td>
+                      <td className="px-5 py-3 text-xs">{renderComparisonCell(row.system)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <p className="flex items-start gap-2 text-[11px] text-outline italic leading-relaxed pt-4">
+            <Icon name="info" className=" text-sm text-primary mt-0.5 shrink-0" />
+            <span>
+              Biaya tahunan terpisah dari harga di atas: hosting + domain sekitar Rp 500.000 -
+              Rp 1.000.000 per tahun. Kami memberi garansi perbaikan bug 30 hari setelah situs
+              go-live, serta penyerahan 100% kepemilikan kode sumber dan aset desain.
+            </span>
+          </p>
         </section>
 
         {/* Interactive Custom Estimation Calculator Widget */}

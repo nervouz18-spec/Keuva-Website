@@ -1,9 +1,11 @@
 import { Icon } from './Icon';
 import React from 'react';
 import { useLeadForm } from '../hooks/useLeadForm';
+import { useAvailability } from '../hooks/useAvailability';
 
 export const KontakView: React.FC = () => {
   const lead = useLeadForm({ source: 'kontak' });
+  const availability = useAvailability();
   const {
     name,
     setName,
@@ -116,18 +118,37 @@ export const KontakView: React.FC = () => {
             </div>
 
             {/* Jam Operasional */}
-            <div className="p-6 rounded-2xl bg-surface-container-low border border-line flex items-center justify-between">
+            <div className="p-6 rounded-2xl bg-surface-container-low border border-line flex items-center justify-between gap-4">
               <div>
                 <span className="text-[10px] uppercase font-bold text-outline">
                   Jam Konsultasi Aktif
                 </span>
                 <p className="text-xs font-semibold text-on-surface mt-0.5">
-                  Senin - Sabtu: 08.30 - 20.00 WIB
+                  {availability.hoursLabel}
+                </p>
+                <p
+                  className={`text-[11px] mt-1 ${
+                    availability.isOpen ? 'text-success' : 'text-outline'
+                  }`}
+                >
+                  {availability.isOpen
+                    ? `${availability.detailLabel} · pukul ${availability.nowLabel}`
+                    : availability.detailLabel}
                 </p>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-tertiary text-xs font-semibold border border-line">
-                <span className="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
-                Online Sekarang
+              <span
+                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-xs font-semibold border shrink-0 ${
+                  availability.isOpen
+                    ? 'text-success border-success/40'
+                    : 'text-outline border-line-strong'
+                }`}
+              >
+                <span
+                  className={`w-1.5 h-1.5 rounded-full ${
+                    availability.isOpen ? 'bg-success animate-pulse' : 'bg-outline'
+                  }`}
+                ></span>
+                {availability.isOpen ? 'Online Sekarang' : 'Offline'}
               </span>
             </div>
           </div>
