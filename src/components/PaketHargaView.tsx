@@ -1,6 +1,17 @@
 import { Icon } from './Icon';
 import React, { useState } from 'react';
 import { NavTab } from '../types';
+import {
+  ADDON_CONFIG,
+  ADDON_KEYS,
+  COMPARISON_ROWS,
+  MODULE_CONFIG,
+  MODULE_KEYS,
+  PRICING_FAQ,
+  PRICING_PLANS,
+  type AddonKey,
+  type ModuleKey,
+} from '../data/pricing';
 
 interface PaketHargaViewProps {
   onTabChange: (tab: NavTab) => void;
@@ -14,85 +25,26 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   // Scope Estimator State
-  const [selectedModule, setSelectedModule] = useState<'starter' | 'business' | 'system'>('starter');
-  const [addons, setAddons] = useState({
+  const [selectedModule, setSelectedModule] = useState<ModuleKey>('starter');
+  const [addons, setAddons] = useState<Record<AddonKey, boolean>>({
     payment: false,
     seo: false,
     multilingual: false,
     dashboard: false,
   });
 
-  const moduleConfig = {
-    starter: { label: 'Starter Website', sub: 'Website sederhana', price: 1500000, days: 5 },
-    business: { label: 'Business Website', sub: 'Company profile 6 halaman', price: 3500000, days: 10 },
-    system: { label: 'Business System', sub: 'Aplikasi web full-stack', price: 6000000, days: 25 },
-  };
-
-  const addonConfig = {
-    payment: { label: 'Integrasi Pembayaran Otomatis', price: 1200000, days: 2 },
-    seo: { label: 'Paket SEO Premium & Schema', price: 800000, days: 2 },
-    multilingual: { label: 'Multi-Bahasa (Bilingual ID/EN)', price: 1500000, days: 3 },
-    dashboard: { label: 'Custom Dashboard / Database', price: 2000000, days: 4 },
-  };
-
-  const currentBase = moduleConfig[selectedModule];
+  const currentBase = MODULE_CONFIG[selectedModule];
   let calculatedTotal = currentBase.price;
   let calculatedDays = currentBase.days;
 
-  if (addons.payment) {
-    calculatedTotal += addonConfig.payment.price;
-    calculatedDays += addonConfig.payment.days;
-  }
-  if (addons.seo) {
-    calculatedTotal += addonConfig.seo.price;
-    calculatedDays += addonConfig.seo.days;
-  }
-  if (addons.multilingual) {
-    calculatedTotal += addonConfig.multilingual.price;
-    calculatedDays += addonConfig.multilingual.days;
-  }
-  if (addons.dashboard) {
-    calculatedTotal += addonConfig.dashboard.price;
-    calculatedDays += addonConfig.dashboard.days;
+  for (const key of ADDON_KEYS) {
+    if (addons[key]) {
+      calculatedTotal += ADDON_CONFIG[key].price;
+      calculatedDays += ADDON_CONFIG[key].days;
+    }
   }
 
   const formattedCalculatedPrice = 'Rp ' + calculatedTotal.toLocaleString('id-ID');
-
-  const faqList = [
-    {
-      q: 'Bagaimana mekanisme sistem pembayaran di KeuvaWeb?',
-      a: 'Kami memberlakukan sistem termin profesional: Down Payment (DP) sebesar 50% di awal setelah kontrak kerja sama disetujui, dan pelunasan 50% sisanya dilakukan setelah website selesai diuji coba (staging preview) serta siap untuk dipublikasikan ke domain utama Anda.',
-    },
-    {
-      q: 'Apakah source code dan akses website sepenuhnya menjadi hak milik kami?',
-      a: 'Ya, 100%. Tidak ada sistem lock-in atau ketergantungan sewa kode. Seluruh aset desain di Figma, repository kode sumber (GitHub/GitLab), akun server hosting, dan domain akan kami serahkan sepenuhnya kepada tim Anda saat serah terima proyek.',
-    },
-    {
-      q: 'Apakah tim kami akan diajarkan cara mengelola dan mengubah konten website?',
-      a: 'Tentu saja. Kami menyediakan sesi onboarding video walkthrough berdurasi 30-45 menit yang direkam khusus untuk tim Anda, disertai panduan dokumentasi ringkas tentang cara menambah artikel blog, mengupdate portofolio, maupun mengubah teks dan gambar mandiri tanpa koding.',
-    },
-    {
-      q: 'Apa yang terjadi jika terdapat bug atau error setelah masa garansi habis?',
-      a: 'Anda dapat memperpanjang paket Maintenance & Care Bulanan kami yang fleksibel, atau menghubungi kami kapan saja dengan sistem on-demand task hourly rate yang sangat kompetitif dan transparan.',
-    },
-  ];
-
-  const comparisonRows: { label: string; starter: string; business: string; system: string }[] = [
-    { label: 'Harga', starter: 'Rp 1.500.000', business: 'Rp 3.500.000', system: 'Mulai Rp 6.000.000' },
-    { label: 'Estimasi pengerjaan', starter: '3-7 hari kerja', business: '7-14 hari kerja', system: '2-5 minggu' },
-    { label: 'Jumlah halaman', starter: 'Landing page', business: 'Hingga 6 halaman', system: 'Tak terbatas' },
-    { label: 'Tingkat desain', starter: 'Responsif', business: 'Semi-custom', system: 'Custom penuh' },
-    { label: 'Form kontak & WhatsApp', starter: '✓', business: '✓', system: '✓' },
-    { label: 'SEO dasar', starter: '✓', business: '✓', system: '✓' },
-    { label: 'Katalog produk / layanan', starter: '—', business: '✓', system: '✓' },
-    { label: 'Integrasi API', starter: '—', business: 'Opsional', system: '✓' },
-    { label: 'Login & hak akses pengguna', starter: '—', business: '—', system: '✓' },
-    { label: 'Database & CRUD', starter: '—', business: '—', system: '✓' },
-    { label: 'Dashboard admin', starter: '—', business: '—', system: '✓' },
-    { label: 'Laporan dasar', starter: '—', business: '—', system: '✓' },
-    { label: 'Jumlah revisi', starter: '2 kali', business: '3 kali', system: 'Sesuai kesepakatan' },
-    { label: 'Onboarding & dokumentasi', starter: 'Panduan ringkas', business: 'Panduan ringkas', system: 'Walkthrough 30-45 menit' },
-  ];
 
   const renderComparisonCell = (value: string) => {
     if (value === '✓') return <span className="text-success font-bold">✓</span>;
@@ -132,247 +84,120 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
         {/* Pricing Cards Grid */}
         <section className="max-w-[1280px] mx-auto px-5 md:px-12 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-            {/* Card 1: Starter Website */}
-            <div className="relative flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-surface-container-low transition-all duration-300 hover:bg-surface-container shadow-xl border border-line">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] uppercase font-bold text-outline tracking-wider">
-                    Entry-level
-                  </span>
-                  <span className="px-3 py-1 rounded-md bg-surface-container-high text-on-surface text-xs font-semibold">
-                    3–7 Hari Kerja
-                  </span>
-                </div>
-                <h3 className="font-display text-2xl text-on-surface font-bold">
-                  Starter Website
-                </h3>
-                <p className="text-xs text-outline mt-1 leading-relaxed">
-                  Cocok untuk usaha kecil yang baru mulai online.
-                </p>
-
-                <div className="my-6 py-2">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-sm text-outline">Rp</span>
-                    <span className="font-display text-3xl md:text-4xl text-on-surface font-extrabold tabular-nums">
-                      1.500.000
-                    </span>
-                    <span className="text-xs text-outline">/project</span>
-                  </div>
-                  <span className="text-xs text-tertiary mt-1 block">
-                    Sekali bayar untuk jasa pengerjaan
-                  </span>
-                </div>
-
-                <div className="space-y-2.5 pt-2">
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Landing page atau website sederhana</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Desain responsif</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Informasi produk dan layanan</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Tombol WhatsApp dan kontak</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">SEO dasar</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">2 kali revisi</span>
-                  </div>
-                </div>
-
-                <p className="flex items-start gap-2 text-[11px] text-outline italic leading-relaxed pt-4 mt-4 border-t border-line">
-                  <Icon name="info" className=" text-sm text-primary mt-0.5 shrink-0" />
-                  <span>
-                    Tidak termasuk backend kompleks, domain, hosting, dan biaya layanan pihak ketiga.
-                  </span>
-                </p>
-              </div>
-
-              <div className="pt-8">
-                <button
-                  onClick={onOpenConsultation}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-surface-container-high text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors shadow-sm"
+            {PRICING_PLANS.map((plan) => {
+              const price = MODULE_CONFIG[plan.id].price.toLocaleString('id-ID');
+              const iconColor = plan.featured ? 'text-primary' : 'text-tertiary';
+              return (
+                <div
+                  key={plan.id}
+                  className={`relative flex flex-col justify-between p-6 md:p-8 rounded-2xl ${
+                    plan.featured
+                      ? 'bg-surface-container shadow-2xl -mt-2 lg:-mt-4 mb-2 lg:mb-0 transition-transform duration-300 border-2 border-primary-container/50'
+                      : 'bg-surface-container-low transition-all duration-300 hover:bg-surface-container shadow-xl border border-line'
+                  }`}
                 >
-                  <span>Pilih Paket Starter</span>
-                  <Icon name="arrow_forward" className=" text-sm" />
-                </button>
-              </div>
-            </div>
+                  {plan.featured && (
+                    <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-container via-primary to-tertiary rounded-t-2xl" />
+                  )}
 
-            {/* Card 2: Business Website (FEATURED / POPULAR) */}
-            <div className="relative flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-surface-container shadow-2xl -mt-2 lg:-mt-4 mb-2 lg:mb-0 transition-transform duration-300 border-2 border-primary-container/50">
-              {/* Top Accent Light Bar */}
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-primary-container via-primary to-tertiary rounded-t-2xl" />
+                  <div>
+                    <div
+                      className={`flex items-center justify-between mb-4${
+                        plan.featured ? ' pt-2' : ''
+                      }`}
+                    >
+                      {plan.featured ? (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-bold uppercase tracking-wider shadow-md">
+                          <Icon name="star" className=" text-xs" filled />
+                          {plan.badge}
+                        </span>
+                      ) : (
+                        <span className="text-[10px] uppercase font-bold text-outline tracking-wider">
+                          {plan.eyebrow}
+                        </span>
+                      )}
+                      <span
+                        className={`px-3 py-1 rounded-md bg-surface-container-high text-xs font-semibold ${
+                          plan.featured ? 'text-primary' : 'text-on-surface'
+                        }`}
+                      >
+                        {plan.delivery}
+                      </span>
+                    </div>
 
-              <div>
-                <div className="flex items-center justify-between mb-4 pt-2">
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary-container text-[10px] font-bold uppercase tracking-wider shadow-md">
-                    <Icon name="star" className=" text-xs" filled />
-                    Prioritas
-                  </span>
-                  <span className="px-3 py-1 rounded-md bg-surface-container-high text-primary text-xs font-semibold">
-                    7–14 Hari Kerja
-                  </span>
-                </div>
+                    <h3 className="font-display text-2xl text-on-surface font-bold">
+                      {plan.name}
+                    </h3>
+                    <p className="text-xs text-outline mt-1 leading-relaxed">{plan.tagline}</p>
 
-                <h3 className="font-display text-2xl text-on-surface font-bold">
-                  Business Website
-                </h3>
-                <p className="text-xs text-outline mt-1 leading-relaxed">
-                  Cocok untuk bisnis lokal yang ingin tampil profesional dan menerima pelanggan secara online.
-                </p>
+                    {plan.featured ? (
+                      <div className="my-6 py-3 px-4 rounded-xl bg-surface-container-high border border-line">
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-sm text-outline">Rp</span>
+                          <span className="font-display text-3xl md:text-4xl text-primary font-extrabold tabular-nums">
+                            {price}
+                          </span>
+                          <span className="text-xs text-outline">/project</span>
+                        </div>
+                        <span className="text-xs text-secondary font-medium mt-0.5 block">
+                          {plan.priceNote}
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="my-6 py-2">
+                        <div className="flex items-baseline gap-1">
+                          {plan.pricePrefix && (
+                            <span className="text-xs text-outline mr-1">{plan.pricePrefix}</span>
+                          )}
+                          <span className="text-sm text-outline">Rp</span>
+                          <span className="font-display text-3xl md:text-4xl text-on-surface font-extrabold tabular-nums">
+                            {price}
+                          </span>
+                          <span className="text-xs text-outline">/project</span>
+                        </div>
+                        <span className="text-xs text-tertiary mt-1 block">{plan.priceNote}</span>
+                      </div>
+                    )}
 
-                <div className="my-6 py-3 px-4 rounded-xl bg-surface-container-high border border-line">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-sm text-outline">Rp</span>
-                    <span className="font-display text-3xl md:text-4xl text-primary font-extrabold tabular-nums">
-                      3.500.000
-                    </span>
-                    <span className="text-xs text-outline">/project</span>
-                  </div>
-                  <span className="text-xs text-secondary font-medium mt-0.5 block">
-                    Sekali bayar untuk jasa pengerjaan
-                  </span>
-                </div>
+                    <div className="space-y-2.5 pt-2">
+                      {plan.features.map((feature) => (
+                        <div key={feature.text} className="flex items-start gap-2.5">
+                          <Icon name={feature.icon} className={` ${iconColor} text-base mt-0.5`} />
+                          <span
+                            className={`text-xs text-on-surface${
+                              feature.strong ? ' font-semibold' : ''
+                            }`}
+                          >
+                            {feature.text}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
 
-                <div className="space-y-2.5 pt-2">
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="verified" className=" text-primary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface font-semibold">
-                      Company profile hingga 6 halaman
-                    </span>
+                    {plan.footnote && (
+                      <p className="flex items-start gap-2 text-[11px] text-outline italic leading-relaxed pt-4 mt-4 border-t border-line">
+                        <Icon name="info" className=" text-sm text-primary mt-0.5 shrink-0" />
+                        <span>{plan.footnote}</span>
+                      </p>
+                    )}
                   </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-primary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Desain semi-custom</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-primary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Form kontak dan WhatsApp</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-primary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Katalog layanan atau produk</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-primary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">
-                      Integrasi API sederhana bila diperlukan dan disepakati
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-primary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">SEO dasar</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-primary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">3 kali revisi</span>
-                  </div>
-                </div>
 
-                <p className="flex items-start gap-2 text-[11px] text-outline italic leading-relaxed pt-4 mt-4 border-t border-line">
-                  <Icon name="info" className=" text-sm text-primary mt-0.5 shrink-0" />
-                  <span>
-                    Fitur admin dan database kompleks dihitung terpisah.
-                  </span>
-                </p>
-              </div>
-
-              <div className="pt-8">
-                <button
-                  onClick={onOpenConsultation}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-primary-container to-secondary-container text-white font-bold text-sm shadow-[0_8px_24px_-4px_rgba(77,142,255,0.4)] hover:brightness-110 active:scale-[0.98] transition-all"
-                >
-                  <span>Mulai Proyek Business Website</span>
-                  <Icon name="rocket_launch" className=" text-sm" />
-                </button>
-              </div>
-            </div>
-
-            {/* Card 3: Business System */}
-            <div className="relative flex flex-col justify-between p-6 md:p-8 rounded-2xl bg-surface-container-low transition-all duration-300 hover:bg-surface-container shadow-xl border border-line">
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[10px] uppercase font-bold text-outline tracking-wider">
-                    Full-stack
-                  </span>
-                  <span className="px-3 py-1 rounded-md bg-surface-container-high text-on-surface text-xs font-semibold">
-                    2–5 Minggu
-                  </span>
-                </div>
-                <h3 className="font-display text-2xl text-on-surface font-bold">
-                  Business System
-                </h3>
-                <p className="text-xs text-outline mt-1 leading-relaxed">
-                  Cocok untuk bisnis yang ingin mengelola operasional melalui aplikasi web.
-                </p>
-
-                <div className="my-6 py-2">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-xs text-outline mr-1">Mulai</span>
-                    <span className="text-sm text-outline">Rp</span>
-                    <span className="font-display text-3xl md:text-4xl text-on-surface font-extrabold tabular-nums">
-                      6.000.000
-                    </span>
-                    <span className="text-xs text-outline">/project</span>
-                  </div>
-                  <span className="text-xs text-tertiary mt-1 block">
-                    Estimasi akhir menyesuaikan lingkup proyek
-                  </span>
-                </div>
-
-                <div className="space-y-2.5 pt-2">
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Login dan hak akses pengguna</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Database dan CRUD</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Dashboard admin</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Pengelolaan data pelanggan atau pesanan</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Laporan dasar</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Dokumentasi dan pelatihan singkat</span>
-                  </div>
-                  <div className="flex items-start gap-2.5">
-                    <Icon name="check_circle" className=" text-tertiary text-base mt-0.5" />
-                    <span className="text-xs text-on-surface">Pengujian fungsional</span>
+                  <div className="pt-8">
+                    <button
+                      onClick={onOpenConsultation}
+                      className={`w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-sm ${
+                        plan.featured
+                          ? 'font-bold bg-gradient-to-r from-primary-container to-secondary-container text-white shadow-[0_8px_24px_-4px_rgba(77,142,255,0.4)] hover:brightness-110 active:scale-[0.98] transition-all'
+                          : 'font-semibold bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors shadow-sm'
+                      }`}
+                    >
+                      <span>{plan.cta.label}</span>
+                      <Icon name={plan.cta.icon} className=" text-sm" />
+                    </button>
                   </div>
                 </div>
-              </div>
-
-              <div className="pt-8">
-                <button
-                  onClick={onOpenConsultation}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-surface-container-high text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-colors shadow-sm"
-                >
-                  <span>Konsultasikan Kebutuhan</span>
-                  <Icon name="arrow_forward" className=" text-sm" />
-                </button>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </section>
 
@@ -407,7 +232,7 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-line">
-                  {comparisonRows.map((row) => (
+                  {COMPARISON_ROWS.map((row) => (
                     <tr key={row.label} className="hover:bg-surface-container transition-colors">
                       <td className="px-5 py-3 text-xs text-on-surface-variant">{row.label}</td>
                       <td className="px-5 py-3 text-xs">{renderComparisonCell(row.starter)}</td>
@@ -465,8 +290,8 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
                     1. Pilih Jenis Modul Fungsional:
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                    {(['starter', 'business', 'system'] as const).map((key) => {
-                      const item = moduleConfig[key];
+                    {MODULE_KEYS.map((key) => {
+                      const item = MODULE_CONFIG[key];
                       const active = selectedModule === key;
                       return (
                         <button
@@ -492,44 +317,20 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
                     2. Kapabilitas Tambahan:
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    <label className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high border border-line cursor-pointer hover:bg-surface-container-highest transition-colors">
-                      <input
-                        type="checkbox"
-                        checked={addons.payment}
-                        onChange={(e) => setAddons({ ...addons, payment: e.target.checked })}
-                        className="w-4 h-4 rounded accent-primary-container"
-                      />
-                      <span className="text-xs text-on-surface">
-                        Integrasi Pembayaran Otomatis
-                      </span>
-                    </label>
-                    <label className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high border border-line cursor-pointer hover:bg-surface-container-highest transition-colors">
-                      <input
-                        type="checkbox"
-                        checked={addons.seo}
-                        onChange={(e) => setAddons({ ...addons, seo: e.target.checked })}
-                        className="w-4 h-4 rounded accent-primary-container"
-                      />
-                      <span className="text-xs text-on-surface">Paket SEO Premium & Schema</span>
-                    </label>
-                    <label className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high border border-line cursor-pointer hover:bg-surface-container-highest transition-colors">
-                      <input
-                        type="checkbox"
-                        checked={addons.multilingual}
-                        onChange={(e) => setAddons({ ...addons, multilingual: e.target.checked })}
-                        className="w-4 h-4 rounded accent-primary-container"
-                      />
-                      <span className="text-xs text-on-surface">Multi-Bahasa (Bilingual ID/EN)</span>
-                    </label>
-                    <label className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high border border-line cursor-pointer hover:bg-surface-container-highest transition-colors">
-                      <input
-                        type="checkbox"
-                        checked={addons.dashboard}
-                        onChange={(e) => setAddons({ ...addons, dashboard: e.target.checked })}
-                        className="w-4 h-4 rounded accent-primary-container"
-                      />
-                      <span className="text-xs text-on-surface">Custom Dashboard / Database</span>
-                    </label>
+                    {ADDON_KEYS.map((key) => (
+                      <label
+                        key={key}
+                        className="flex items-center gap-3 p-3 rounded-xl bg-surface-container-high border border-line cursor-pointer hover:bg-surface-container-highest transition-colors"
+                      >
+                        <input
+                          type="checkbox"
+                          checked={addons[key]}
+                          onChange={(e) => setAddons({ ...addons, [key]: e.target.checked })}
+                          className="w-4 h-4 rounded accent-primary-container"
+                        />
+                        <span className="text-xs text-on-surface">{ADDON_CONFIG[key].label}</span>
+                      </label>
+                    ))}
                   </div>
                 </div>
 
@@ -786,7 +587,7 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
             </div>
 
             <div className="space-y-3">
-              {faqList.map((item, i) => {
+              {PRICING_FAQ.map((item, i) => {
                 const isOpen = openFaqIndex === i;
                 return (
                   <div
