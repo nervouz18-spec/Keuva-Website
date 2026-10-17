@@ -105,6 +105,9 @@ html[data-theme='light'] {
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: light;
+  }
+  html[data-theme='dark'] {
     color-scheme: dark;
   }
   html[data-theme='light'] {

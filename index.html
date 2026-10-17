@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id" data-theme="dark" class="dark">
+<html lang="id" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,7 +7,7 @@
       (function () {
         try {
           var t = localStorage.getItem('keuva-theme');
-          if (t !== 'light' && t !== 'dark') t = 'dark';
+          if (t !== 'light' && t !== 'dark') t = 'light';
           document.documentElement.setAttribute('data-theme', t);
           document.documentElement.classList.toggle('dark', t === 'dark');
         } catch (e) {}
@@ -15,7 +15,7 @@
     </script>
     <title>KeuvaWeb — Rekayasa Website Konversi Tertinggi</title>
     <meta name="description" content="Kami merekayasa arsitektur web performa tinggi dengan skor PageSpeed 95+, UX persuasif berorientasi konversi, serta infrastruktur cloud modern yang memacu pertumbuhan omset bisnis Anda." />
-    <meta name="theme-color" content="#0f131d" />
+    <meta name="theme-color" content="#f4f6fb" />
     <meta name="google-site-verification" content="ceOfwVDq9xWO-xrNGcenGHdBEZQSq76sv9UojbIs6oE" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:title" content="KeuvaWeb — Rekayasa Website Konversi Tertinggi" />

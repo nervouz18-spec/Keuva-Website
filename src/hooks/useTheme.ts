@@ -5,7 +5,7 @@ export type Theme = 'dark' | 'light';
 const STORAGE_KEY = 'keuva-theme';
 
 function getInitialTheme(): Theme {
-  if (typeof document === 'undefined') return 'dark';
+  if (typeof document === 'undefined') return 'light';
   const attr = document.documentElement.getAttribute('data-theme');
   if (attr === 'light' || attr === 'dark') return attr;
   try {
@@ -14,7 +14,7 @@ function getInitialTheme(): Theme {
   } catch {
     /* localStorage unavailable */
   }
-  return 'dark';
+  return 'light';
 }
 
 export function useTheme() {
