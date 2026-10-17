@@ -32,11 +32,6 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onOpenConsultation })
           to={TAB_PATHS.beranda}
           className="flex items-center gap-3 text-left focus:outline-none group"
         >
-          <img
-            alt="KeuvaWeb Logo"
-            className="h-8 w-auto object-contain transition-transform group-hover:scale-105"
-            src="/favicon.svg"
-          />
           <span className="font-display text-xl font-bold tracking-tight text-on-surface group-hover:text-ink-strong transition-colors">
             KeuvaWeb
           </span>
@@ -90,13 +85,6 @@ export const Header: React.FC<HeaderProps> = ({ activeTab, onOpenConsultation })
             <span>Konsultasi Gratis</span>
             <Icon name="arrow_forward" className=" text-sm" />
           </button>
-
-          {/* Lead Engineer / Profile Avatar */}
-          <img
-            alt="Lead Engineer Profile"
-            className="w-8 h-8 rounded-full object-cover ring-1 ring-line-strong hidden md:block"
-            src="/images/avatar-engineer.webp"
-          />
 
           {/* Mobile Menu Toggle */}
           <button
