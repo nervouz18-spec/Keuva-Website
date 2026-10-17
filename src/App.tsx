@@ -45,7 +45,7 @@ function RouteFallback() {
       role="status"
       aria-label="Memuat halaman"
     >
-      <div className="h-9 w-9 animate-spin rounded-full border-2 border-white/10 border-t-[#4d8eff]" />
+      <div className="h-9 w-9 animate-spin rounded-full border-2 border-line-strong border-t-primary-container" />
     </div>
   );
 }
@@ -85,7 +85,7 @@ function AppShell() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f131d] text-[#dfe2f1] flex flex-col font-sans selection:bg-[#4d8eff] selection:text-[#00285d]">
+    <div className="min-h-screen bg-background text-on-surface flex flex-col font-sans selection:bg-primary-container selection:text-on-primary-container">
       {/* Navigation Top Bar */}
       <Header
         activeTab={activeTab}

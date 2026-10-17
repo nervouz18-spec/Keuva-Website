@@ -97,22 +97,22 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
       {/* Hero Header */}
       <section className="max-w-[1280px] mx-auto px-5 md:px-12 pt-12 md:pt-16 pb-8">
         <div className="flex flex-col gap-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#262a35] w-fit shadow-sm border border-white/5">
-            <span className="w-2 h-2 rounded-full bg-[#4cd7f6] animate-pulse"></span>
-            <span className="text-[11px] font-bold text-[#4cd7f6] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high w-fit shadow-sm border border-line">
+            <span className="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+            <span className="text-[11px] font-bold text-tertiary tracking-widest uppercase">
               Rekam Jejak Kinerja Nyata
             </span>
           </div>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#dfe2f1] font-extrabold tracking-tight leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-on-surface font-extrabold tracking-tight leading-tight">
             Karya Unggulan yang{' '}
-            <span className="bg-gradient-to-r from-[#adc6ff] to-[#4cd7f6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">
               Membuktikan Dampak
             </span>{' '}
             Omset Klien.
           </h1>
 
-          <p className="text-base text-[#c2c6d6] leading-relaxed">
+          <p className="text-base text-on-surface-variant leading-relaxed">
             Eksplorasi bagaimana arsitektur kode bersih, performa loading sub-detik, dan desain persuasif kami mentransformasi indikator bisnis klien di berbagai sektor industri.
           </p>
 
@@ -126,8 +126,8 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all ${
                     active
-                      ? 'bg-[#4d8eff] text-[#00285d] font-bold shadow-md'
-                      : 'bg-[#171b26] text-[#c2c6d6] hover:bg-[#262a35] border border-white/5'
+                      ? 'bg-primary-container text-on-primary-container font-bold shadow-md'
+                      : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high border border-line'
                   }`}
                 >
                   {cat.label}
@@ -145,31 +145,31 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
             <div
               key={item.id}
               onClick={() => setSelectedCase(item)}
-              className="rounded-2xl bg-[#171b26] border border-white/5 overflow-hidden flex flex-col justify-between shadow-xl cursor-pointer hover:border-[#4d8eff]/40 hover:-translate-y-1 transition-all duration-300 group"
+              className="rounded-2xl bg-surface-container-low border border-line overflow-hidden flex flex-col justify-between shadow-xl cursor-pointer hover:border-primary-container/40 hover:-translate-y-1 transition-all duration-300 group"
             >
               <div>
-                <div className="relative w-full h-56 bg-[#1c1f2a] overflow-hidden">
+                <div className="relative w-full h-56 bg-surface-container overflow-hidden">
                   <LazyImage
                     src={item.imageUrl}
                     alt={item.imageAlt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute top-3 left-3 bg-[#0a0e18]/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-[#adc6ff] border border-white/10">
+                  <div className="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-primary border border-line-strong">
                     {item.category}
                   </div>
-                  <div className="absolute bottom-3 right-3 bg-[#171b26]/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-xs font-bold text-[#4cd7f6] border border-white/10">
+                  <div className="absolute bottom-3 right-3 bg-surface-container-low/90 backdrop-blur-md px-2.5 py-1 rounded-lg text-xs font-bold text-tertiary border border-line-strong">
                     {item.metricBadge}
                   </div>
                 </div>
 
                 <div className="p-6 flex flex-col gap-3">
-                  <span className="text-[11px] uppercase font-bold text-[#8c909f]">
+                  <span className="text-[11px] uppercase font-bold text-outline">
                     {item.client}
                   </span>
-                  <h3 className="font-display text-lg text-[#dfe2f1] font-bold leading-snug group-hover:text-[#adc6ff] transition-colors">
+                  <h3 className="font-display text-lg text-on-surface font-bold leading-snug group-hover:text-primary transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#8c909f] leading-relaxed line-clamp-3">
+                  <p className="text-xs text-outline leading-relaxed line-clamp-3">
                     {item.description}
                   </p>
 
@@ -177,7 +177,7 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
                     {item.tags.map((t, idx) => (
                       <span
                         key={idx}
-                        className="px-2 py-0.5 rounded bg-[#1c1f2a] text-[10px] text-[#c2c6d6] border border-white/5"
+                        className="px-2 py-0.5 rounded bg-surface-container text-[10px] text-on-surface-variant border border-line"
                       >
                         {t}
                       </span>
@@ -186,12 +186,12 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
                 </div>
               </div>
 
-              <div className="p-6 pt-0 border-t border-white/5 flex items-center justify-between text-xs">
-                <span className="text-[#4cd7f6] font-medium flex items-center gap-1">
+              <div className="p-6 pt-0 border-t border-line flex items-center justify-between text-xs">
+                <span className="text-tertiary font-medium flex items-center gap-1">
                   <Icon name="speed" className=" text-sm" />
                   Load: {item.loadSpeed}
                 </span>
-                <span className="text-[#adc6ff] font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span className="text-primary font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                   Detail Studi Kasus →
                 </span>
               </div>
@@ -202,21 +202,21 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
 
       {/* Case Study Detail Modal */}
       {selectedCase && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-          <div className="relative w-full max-w-3xl rounded-3xl bg-[#171b26] border border-white/10 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-backdrop backdrop-blur-md animate-in fade-in duration-200">
+          <div className="relative w-full max-w-3xl rounded-3xl bg-surface-container-low border border-line-strong shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
             {/* Header */}
-            <div className="p-5 bg-[#1c1f2a] border-b border-white/5 flex items-center justify-between">
+            <div className="p-5 bg-surface-container border-b border-line flex items-center justify-between">
               <div>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-[#4cd7f6]">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-tertiary">
                   {selectedCase.category}
                 </span>
-                <h3 className="font-display text-lg font-bold text-white">
+                <h3 className="font-display text-lg font-bold text-ink-strong">
                   {selectedCase.client}
                 </h3>
               </div>
               <button
                 onClick={() => setSelectedCase(null)}
-                className="w-8 h-8 rounded-lg bg-[#262a35] hover:bg-[#313540] text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-ink-strong flex items-center justify-center transition-colors"
               >
                 <Icon name="close" className=" text-base" />
               </button>
@@ -224,7 +224,7 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
 
             {/* Content */}
             <div className="p-6 overflow-y-auto space-y-6">
-              <div className="w-full h-64 rounded-2xl overflow-hidden bg-[#1c1f2a]">
+              <div className="w-full h-64 rounded-2xl overflow-hidden bg-surface-container">
                 <LazyImage
                   src={selectedCase.imageUrl}
                   alt={selectedCase.imageAlt}
@@ -233,55 +233,55 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
               </div>
 
               <div>
-                <h4 className="font-display text-xl font-bold text-[#dfe2f1] mb-2">
+                <h4 className="font-display text-xl font-bold text-on-surface mb-2">
                   {selectedCase.title}
                 </h4>
-                <p className="text-sm text-[#c2c6d6] leading-relaxed">
+                <p className="text-sm text-on-surface-variant leading-relaxed">
                   {selectedCase.description}
                 </p>
               </div>
 
               {/* Key Results Grid */}
-              <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-[#1c1f2a] border border-white/5">
+              <div className="grid grid-cols-3 gap-4 p-4 rounded-2xl bg-surface-container border border-line">
                 {selectedCase.results.map((r, i) => (
                   <div key={i} className="flex flex-col text-center">
-                    <span className="font-display text-xl md:text-2xl font-bold text-[#4cd7f6] tabular-nums">
+                    <span className="font-display text-xl md:text-2xl font-bold text-tertiary tabular-nums">
                       {r.value}
                     </span>
-                    <span className="text-[11px] text-[#8c909f] mt-0.5">{r.label}</span>
+                    <span className="text-[11px] text-outline mt-0.5">{r.label}</span>
                   </div>
                 ))}
               </div>
 
               {/* Challenge & Solution */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-[#262a35]/60 border border-white/5">
-                  <h5 className="text-xs font-bold text-[#ffb4ab] uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                <div className="p-4 rounded-xl bg-surface-container-high/60 border border-line">
+                  <h5 className="text-xs font-bold text-error uppercase tracking-wider mb-1 flex items-center gap-1.5">
                     <Icon name="warning" className=" text-sm" />
                     Tantangan Awal
                   </h5>
-                  <p className="text-xs text-[#c2c6d6] leading-relaxed">
+                  <p className="text-xs text-on-surface-variant leading-relaxed">
                     {selectedCase.challenge}
                   </p>
                 </div>
-                <div className="p-4 rounded-xl bg-[#262a35]/60 border border-white/5">
-                  <h5 className="text-xs font-bold text-[#4cd7f6] uppercase tracking-wider mb-1 flex items-center gap-1.5">
+                <div className="p-4 rounded-xl bg-surface-container-high/60 border border-line">
+                  <h5 className="text-xs font-bold text-tertiary uppercase tracking-wider mb-1 flex items-center gap-1.5">
                     <Icon name="check_circle" className=" text-sm" />
                     Solusi Rekayasa KeuvaWeb
                   </h5>
-                  <p className="text-xs text-[#c2c6d6] leading-relaxed">
+                  <p className="text-xs text-on-surface-variant leading-relaxed">
                     {selectedCase.solution}
                   </p>
                 </div>
               </div>
 
               {/* Action buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/5">
+              <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-line">
                 <div className="flex flex-wrap gap-2">
                   {selectedCase.tags.map((t, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 rounded bg-[#1c1f2a] text-xs text-[#adc6ff] border border-white/5"
+                      className="px-2.5 py-1 rounded bg-surface-container text-xs text-primary border border-line"
                     >
                       {t}
                     </span>
@@ -292,7 +292,7 @@ export const PortofolioView: React.FC<PortofolioViewProps> = ({ onOpenConsultati
                     setSelectedCase(null);
                     onOpenConsultation();
                   }}
-                  className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#4d8eff] to-[#3131c0] text-white font-bold text-xs hover:brightness-110 shadow-lg"
+                  className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-primary-container to-secondary-container text-white font-bold text-xs hover:brightness-110 shadow-lg"
                 >
                   Konsultasikan Proyek Serupa →
                 </button>

@@ -32,21 +32,21 @@ export const KontakView: React.FC = () => {
     <div className="w-full">
       <section className="max-w-[1280px] mx-auto px-5 md:px-12 pt-12 md:pt-16 pb-8">
         <div className="flex flex-col gap-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#262a35] w-fit shadow-sm border border-white/5">
-            <span className="w-2 h-2 rounded-full bg-[#4cd7f6] animate-pulse"></span>
-            <span className="text-[11px] font-bold text-[#4cd7f6] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high w-fit shadow-sm border border-line">
+            <span className="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+            <span className="text-[11px] font-bold text-tertiary tracking-widest uppercase">
               Inisiasi Proyek & Kontak Studio
             </span>
           </div>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#dfe2f1] font-extrabold tracking-tight leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-on-surface font-extrabold tracking-tight leading-tight">
             Mari Rancang Website Masa Depan{' '}
-            <span className="bg-gradient-to-r from-[#adc6ff] to-[#4cd7f6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">
               Bisnis Anda.
             </span>
           </h1>
 
-          <p className="text-base text-[#c2c6d6] leading-relaxed">
+          <p className="text-base text-on-surface-variant leading-relaxed">
             Punya ide website baru atau ingin membedah kelemahan performa situs lama Anda? Tim lead architect kami siap berdiskusi tanpa komitmen awal.
           </p>
         </div>
@@ -56,105 +56,105 @@ export const KontakView: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Direct Info & Channels */}
           <div className="lg:col-span-5 flex flex-col gap-6">
-            <div className="p-6 md:p-8 rounded-3xl bg-[#171b26] border border-white/5 shadow-xl flex flex-col gap-6">
-              <h3 className="font-display text-xl font-bold text-white">
+            <div className="p-6 md:p-8 rounded-3xl bg-surface-container-low border border-line shadow-xl flex flex-col gap-6">
+              <h3 className="font-display text-xl font-bold text-ink-strong">
                 Informasi Kontak Cepat
               </h3>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#4d8eff]/20 text-[#adc6ff] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-xl bg-primary-container/20 text-primary flex items-center justify-center shrink-0 mt-0.5">
                   <Icon name="chat" className=" text-xl" />
                 </div>
                 <div>
-                  <span className="text-[11px] uppercase font-bold text-[#8c909f]">
+                  <span className="text-[11px] uppercase font-bold text-outline">
                     WhatsApp Bisnis Studio
                   </span>
                   <a
                     href="https://wa.me/6281298432865"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block text-sm font-semibold text-[#dfe2f1] hover:text-[#4cd7f6] transition-colors"
+                    className="block text-sm font-semibold text-on-surface hover:text-tertiary transition-colors"
                   >
                     +62 812-9843-2865
                   </a>
-                  <span className="text-xs text-[#8c909f]">Respon rata-rata &lt; 15 menit</span>
+                  <span className="text-xs text-outline">Respon rata-rata &lt; 15 menit</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#4cd7f6]/20 text-[#4cd7f6] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-xl bg-tertiary/20 text-tertiary flex items-center justify-center shrink-0 mt-0.5">
                   <Icon name="mail" className=" text-xl" />
                 </div>
                 <div>
-                  <span className="text-[11px] uppercase font-bold text-[#8c909f]">
+                  <span className="text-[11px] uppercase font-bold text-outline">
                     Email Permintaan Proposal
                   </span>
                   <a
                     href="mailto:taufiqrahmanprasetyo@gmail.com"
-                    className="block text-sm font-semibold text-[#dfe2f1] hover:text-[#4cd7f6] transition-colors"
+                    className="block text-sm font-semibold text-on-surface hover:text-tertiary transition-colors"
                   >
                     taufiqrahmanprasetyo@gmail.com
                   </a>
-                  <span className="text-xs text-[#8c909f]">Proposal dikirim dalam 24 jam</span>
+                  <span className="text-xs text-outline">Proposal dikirim dalam 24 jam</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-[#c0c1ff]/20 text-[#c0c1ff] flex items-center justify-center shrink-0 mt-0.5">
+                <div className="w-10 h-10 rounded-xl bg-secondary/20 text-secondary flex items-center justify-center shrink-0 mt-0.5">
                   <Icon name="location_on" className=" text-xl" />
                 </div>
                 <div>
-                  <span className="text-[11px] uppercase font-bold text-[#8c909f]">
+                  <span className="text-[11px] uppercase font-bold text-outline">
                     Kantor Studio
                   </span>
-                  <p className="text-sm font-semibold text-[#dfe2f1]">
+                  <p className="text-sm font-semibold text-on-surface">
                     Ayodhya Residence
                   </p>
-                  <span className="text-xs text-[#8c909f]">Tangerang, Indonesia</span>
+                  <span className="text-xs text-outline">Tangerang, Indonesia</span>
                 </div>
               </div>
             </div>
 
             {/* Jam Operasional */}
-            <div className="p-6 rounded-2xl bg-[#171b26] border border-white/5 flex items-center justify-between">
+            <div className="p-6 rounded-2xl bg-surface-container-low border border-line flex items-center justify-between">
               <div>
-                <span className="text-[10px] uppercase font-bold text-[#8c909f]">
+                <span className="text-[10px] uppercase font-bold text-outline">
                   Jam Konsultasi Aktif
                 </span>
-                <p className="text-xs font-semibold text-[#dfe2f1] mt-0.5">
+                <p className="text-xs font-semibold text-on-surface mt-0.5">
                   Senin - Sabtu: 08.30 - 20.00 WIB
                 </p>
               </div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1c1f2a] text-[#4cd7f6] text-xs font-semibold border border-white/5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#4cd7f6] animate-pulse"></span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-tertiary text-xs font-semibold border border-line">
+                <span className="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
                 Online Sekarang
               </span>
             </div>
           </div>
 
           {/* Right Column: Complete Interactive Inquiry Form */}
-          <div className="lg:col-span-7 bg-[#171b26] p-6 md:p-10 rounded-3xl border border-white/10 shadow-2xl">
-            <h3 className="font-display text-2xl font-bold text-[#dfe2f1] mb-1">
+          <div className="lg:col-span-7 bg-surface-container-low p-6 md:p-10 rounded-3xl border border-line-strong shadow-2xl">
+            <h3 className="font-display text-2xl font-bold text-on-surface mb-1">
               Formulir Permintaan Penawaran & Spesifikasi
             </h3>
-            <p className="text-xs text-[#8c909f] mb-6">
+            <p className="text-xs text-outline mb-6">
               Sampaikan kebutuhan Anda secara detail. Kami akan menyiapkan simulasi roadmap arsitektur sebelum sesi zoom/meet.
             </p>
 
             {isSuccess ? (
-              <div className="p-8 rounded-2xl bg-[#1c1f2a] text-center border border-[#4d8eff]/40 animate-in fade-in duration-300">
-                <Icon name="task_alt" className=" text-5xl text-[#4cd7f6] mb-3" />
-                <h4 className="font-display text-xl font-bold text-white mb-2">
+              <div className="p-8 rounded-2xl bg-surface-container text-center border border-primary-container/40 animate-in fade-in duration-300">
+                <Icon name="task_alt" className=" text-5xl text-tertiary mb-3" />
+                <h4 className="font-display text-xl font-bold text-ink-strong mb-2">
                   {channel === 'webhook'
                     ? 'Terima Kasih, Permintaan Diterima!'
                     : 'Selesaikan Kirim via WhatsApp'}
                 </h4>
-                <p className="text-sm text-[#c2c6d6] leading-relaxed mb-6 max-w-md mx-auto">
+                <p className="text-sm text-on-surface-variant leading-relaxed mb-6 max-w-md mx-auto">
                   {channel === 'webhook' ? (
                     <>
-                      Data proyek Anda atas nama <strong className="text-white">{name}</strong>{' '}
+                      Data proyek Anda atas nama <strong className="text-ink-strong">{name}</strong>{' '}
                       sudah kami terima. Tim engineer kami akan menghubungi WhatsApp Anda di{' '}
-                      <span className="text-[#4cd7f6] font-mono">{wa}</span> dalam 24 jam.
+                      <span className="text-tertiary font-mono">{wa}</span> dalam 24 jam.
                     </>
                   ) : (
                     <>
@@ -168,7 +168,7 @@ export const KontakView: React.FC = () => {
                     href={waLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 rounded-xl bg-[#25D366] text-white font-bold text-xs flex items-center gap-2 shadow-lg hover:brightness-110"
+                    className="px-6 py-3 rounded-xl bg-success text-white font-bold text-xs flex items-center gap-2 shadow-lg hover:brightness-110"
                   >
                     <Icon name="chat" className=" text-sm" />
                     <span>
@@ -179,7 +179,7 @@ export const KontakView: React.FC = () => {
                   </a>
                   <button
                     onClick={reset}
-                    className="px-6 py-3 rounded-xl bg-[#262a35] text-[#dfe2f1] font-semibold text-xs hover:bg-[#313540]"
+                    className="px-6 py-3 rounded-xl bg-surface-container-high text-on-surface font-semibold text-xs hover:bg-surface-container-highest"
                   >
                     Kirim Formulir Lain
                   </button>
@@ -188,7 +188,7 @@ export const KontakView: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-[#dfe2f1]" htmlFor="kontak-name">
+                  <label className="text-xs font-semibold text-on-surface" htmlFor="kontak-name">
                     Nama Lengkap / Nama Bisnis *
                   </label>
                   <input
@@ -198,13 +198,13 @@ export const KontakView: React.FC = () => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Contoh: Budi Santoso - Surya Medika Group"
-                    className="px-4 py-2.5 rounded-xl bg-[#1c1f2a] text-[#dfe2f1] placeholder:text-[#8c909f]/50 border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#4d8eff] text-sm"
+                    className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface placeholder:text-outline/50 border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm"
                   />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold text-[#dfe2f1]" htmlFor="kontak-wa">
+                    <label className="text-xs font-semibold text-on-surface" htmlFor="kontak-wa">
                       Nomor WhatsApp Aktif *
                     </label>
                     <input
@@ -214,11 +214,11 @@ export const KontakView: React.FC = () => {
                       value={wa}
                       onChange={(e) => setWa(e.target.value)}
                       placeholder="081298432865"
-                      className="px-4 py-2.5 rounded-xl bg-[#1c1f2a] text-[#dfe2f1] placeholder:text-[#8c909f]/50 border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#4d8eff] text-sm font-mono"
+                      className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface placeholder:text-outline/50 border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-mono"
                     />
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold text-[#dfe2f1]" htmlFor="kontak-email">
+                    <label className="text-xs font-semibold text-on-surface" htmlFor="kontak-email">
                       Alamat Email Bisnis *
                     </label>
                     <input
@@ -228,21 +228,21 @@ export const KontakView: React.FC = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="budi@suryamedika.co.id"
-                      className="px-4 py-2.5 rounded-xl bg-[#1c1f2a] text-[#dfe2f1] placeholder:text-[#8c909f]/50 border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#4d8eff] text-sm"
+                      className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface placeholder:text-outline/50 border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-[#dfe2f1]" htmlFor="kontak-type">
+                  <label className="text-xs font-semibold text-on-surface" htmlFor="kontak-type">
                     Kategori Website
                   </label>
                   <select
                     id="kontak-type"
                     value={projectType}
                     onChange={(e) => setProjectType(e.target.value)}
-                      className="px-4 py-2.5 rounded-xl bg-[#1c1f2a] text-[#dfe2f1] border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#4d8eff] text-sm"
+                      className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm"
                     >
                       <option value="landing">Landing Page Konversi Tinggi (Iklan Ads)</option>
                       <option value="compro">Company Profile Korporat / B2B</option>
@@ -252,14 +252,14 @@ export const KontakView: React.FC = () => {
                     </select>
                   </div>
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold text-[#dfe2f1]" htmlFor="kontak-budget">
+                    <label className="text-xs font-semibold text-on-surface" htmlFor="kontak-budget">
                       Alokasi Anggaran Investasi
                     </label>
                     <select
                       id="kontak-budget"
                       value={budget}
                       onChange={(e) => setBudget(e.target.value)}
-                      className="px-4 py-2.5 rounded-xl bg-[#1c1f2a] text-[#dfe2f1] border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#4d8eff] text-sm"
+                      className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm"
                     >
                       <option value="starter">Rp 1,5jt (Starter Website)</option>
                       <option value="business">Rp 3,5jt (Business Website)</option>
@@ -270,7 +270,7 @@ export const KontakView: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs font-semibold text-[#dfe2f1]" htmlFor="kontak-notes">
+                  <label className="text-xs font-semibold text-on-surface" htmlFor="kontak-notes">
                     Tujuan Bisnis & Tautan Website Lama (Opsional)
                   </label>
                   <textarea
@@ -279,7 +279,7 @@ export const KontakView: React.FC = () => {
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="Ceritakan target perusahaan Anda, target waktu peluncuran, atau referensi desain yang disukai..."
-                    className="px-4 py-2.5 rounded-xl bg-[#1c1f2a] text-[#dfe2f1] placeholder:text-[#8c909f]/50 border border-white/10 focus:outline-none focus:ring-2 focus:ring-[#4d8eff] text-sm resize-none"
+                    className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface placeholder:text-outline/50 border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm resize-none"
                   />
                 </div>
 
@@ -294,7 +294,7 @@ export const KontakView: React.FC = () => {
                 />
 
                 {error && (
-                  <p className="text-xs text-[#ff8695] bg-[#ff8695]/10 border border-[#ff8695]/30 rounded-xl px-4 py-3">
+                  <p className="text-xs text-danger bg-danger/10 border border-danger/30 rounded-xl px-4 py-3">
                     {error}
                   </p>
                 )}
@@ -302,7 +302,7 @@ export const KontakView: React.FC = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="mt-2 w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#4d8eff] to-[#3131c0] text-white font-bold text-sm shadow-[0_8px_20px_-4px_rgba(77,142,255,0.4)] hover:brightness-110 active:scale-[0.99] transition-all disabled:opacity-50"
+                  className="mt-2 w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-gradient-to-r from-primary-container to-secondary-container text-white font-bold text-sm shadow-[0_8px_20px_-4px_rgba(77,142,255,0.4)] hover:brightness-110 active:scale-[0.99] transition-all disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <>

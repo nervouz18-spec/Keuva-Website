@@ -64,19 +64,19 @@ export const LazyImage: React.FC<LazyImageProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden bg-[#1c1f2a] ${containerClassName}`}
+      className={`relative overflow-hidden bg-surface-container ${containerClassName}`}
     >
       {/* Skeleton Shimmer while loading */}
       {!isLoaded && !hasError && (
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#171b26] via-[#262a35] to-[#171b26] bg-[length:200%_100%] animate-pulse" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-surface-container-low via-surface-container-high to-surface-container-low bg-[length:200%_100%] animate-pulse" />
       )}
 
       {/* Fallback container if image fails to load */}
       {hasError ? (
-        <div className="w-full h-full min-h-[140px] flex flex-col items-center justify-center p-4 bg-gradient-to-br from-[#171b26] to-[#0a0e18] text-[#c2c6d6] text-center">
-          <Icon name={fallbackIcon} className="text-3xl text-[#4d8eff] mb-2" />
-          <span className="text-xs font-medium text-[#dfe2f1]">{fallbackTitle}</span>
-          <span className="text-[10px] text-[#8c909f] mt-1">{alt}</span>
+        <div className="w-full h-full min-h-[140px] flex flex-col items-center justify-center p-4 bg-gradient-to-br from-surface-container-low to-surface-container-lowest text-on-surface-variant text-center">
+          <Icon name={fallbackIcon} className="text-3xl text-primary-container mb-2" />
+          <span className="text-xs font-medium text-on-surface">{fallbackTitle}</span>
+          <span className="text-[10px] text-outline mt-1">{alt}</span>
         </div>
       ) : isInView ? (
         <img

@@ -73,21 +73,21 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
     <div className="w-full">
       <section className="max-w-[1280px] mx-auto px-5 md:px-12 pt-12 md:pt-16 pb-8">
         <div className="flex flex-col gap-4 max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#262a35] w-fit shadow-sm border border-white/5">
-            <span className="w-2 h-2 rounded-full bg-[#4cd7f6] animate-pulse"></span>
-            <span className="text-[11px] font-bold text-[#4cd7f6] tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high w-fit shadow-sm border border-line">
+            <span className="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+            <span className="text-[11px] font-bold text-tertiary tracking-widest uppercase">
               Metodologi Kerja Terstruktur
             </span>
           </div>
 
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#dfe2f1] font-extrabold tracking-tight leading-tight">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl text-on-surface font-extrabold tracking-tight leading-tight">
             Transparansi Proses dari{' '}
-            <span className="bg-gradient-to-r from-[#adc6ff] to-[#4cd7f6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-tertiary bg-clip-text text-transparent">
               Briefing hingga Go-Live.
             </span>
           </h1>
 
-          <p className="text-base text-[#c2c6d6] leading-relaxed">
+          <p className="text-base text-on-surface-variant leading-relaxed">
             Tidak ada kejutan atau keterlambatan misterius. Setiap langkah divalidasi bersama Anda melalui timeline harian transparan dengan jaminan SLA profesional.
           </p>
         </div>
@@ -104,56 +104,56 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
                 onClick={() => setActiveStep(i)}
                 className={`p-5 rounded-2xl text-left transition-all border ${
                   active
-                    ? 'bg-[#1c1f2a] border-[#4d8eff] shadow-lg shadow-[#4d8eff]/10'
-                    : 'bg-[#171b26] border-white/5 text-[#c2c6d6] hover:bg-[#1c1f2a]'
+                    ? 'bg-surface-container border-primary-container shadow-lg shadow-primary-container/10'
+                    : 'bg-surface-container-low border-line text-on-surface-variant hover:bg-surface-container'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
                   <span
                     className={`font-display text-2xl font-black ${
-                      active ? 'text-[#4cd7f6]' : 'text-[#8c909f]'
+                      active ? 'text-tertiary' : 'text-outline'
                     }`}
                   >
                     {st.num}
                   </span>
-                  <span className="text-[11px] font-semibold text-[#8c909f]">{st.timeline}</span>
+                  <span className="text-[11px] font-semibold text-outline">{st.timeline}</span>
                 </div>
-                <h4 className="font-display text-sm font-bold text-[#dfe2f1]">{st.title}</h4>
+                <h4 className="font-display text-sm font-bold text-on-surface">{st.title}</h4>
               </button>
             );
           })}
         </div>
 
         {/* Active Step Showcase Card */}
-        <div className="rounded-3xl bg-[#171b26] p-6 md:p-10 border border-white/10 shadow-2xl">
+        <div className="rounded-3xl bg-surface-container-low p-6 md:p-10 border border-line-strong shadow-2xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 flex flex-col gap-4">
               <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-[#4cd7f6] uppercase tracking-wider">
+                <span className="text-xs font-bold text-tertiary uppercase tracking-wider">
                   Fase {steps[activeStep].num} · {steps[activeStep].timeline}
                 </span>
               </div>
-              <h3 className="font-display text-2xl md:text-3xl text-white font-bold">
+              <h3 className="font-display text-2xl md:text-3xl text-ink-strong font-bold">
                 {steps[activeStep].title}
               </h3>
-              <p className="text-sm font-medium text-[#adc6ff]">
+              <p className="text-sm font-medium text-primary">
                 {steps[activeStep].tagline}
               </p>
-              <p className="text-sm text-[#c2c6d6] leading-relaxed">
+              <p className="text-sm text-on-surface-variant leading-relaxed">
                 {steps[activeStep].desc}
               </p>
 
               <div className="pt-2">
-                <h5 className="text-xs font-bold uppercase tracking-wider text-[#dfe2f1] mb-3">
+                <h5 className="text-xs font-bold uppercase tracking-wider text-on-surface mb-3">
                   Output & Deliverables Fase Ini:
                 </h5>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {steps[activeStep].deliverables.map((d, idx) => (
                     <div
                       key={idx}
-                      className="flex items-start gap-2.5 p-3 rounded-xl bg-[#1c1f2a] border border-white/5 text-xs text-[#dfe2f1]"
+                      className="flex items-start gap-2.5 p-3 rounded-xl bg-surface-container border border-line text-xs text-on-surface"
                     >
-                      <Icon name="task_alt" className=" text-sm text-[#4cd7f6] mt-0.5" />
+                      <Icon name="task_alt" className=" text-sm text-tertiary mt-0.5" />
                       <span>{d}</span>
                     </div>
                   ))}
@@ -161,23 +161,23 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-[#1c1f2a] p-6 rounded-2xl border border-white/5 flex flex-col gap-4">
-              <div className="w-12 h-12 rounded-xl bg-[#4d8eff]/20 text-[#4cd7f6] flex items-center justify-center">
+            <div className="lg:col-span-5 bg-surface-container p-6 rounded-2xl border border-line flex flex-col gap-4">
+              <div className="w-12 h-12 rounded-xl bg-primary-container/20 text-tertiary flex items-center justify-center">
                 <Icon name={steps[activeStep].icon} className="text-2xl" />
               </div>
-              <h4 className="font-display text-lg font-bold text-[#dfe2f1]">
+              <h4 className="font-display text-lg font-bold text-on-surface">
                 Sistem Koordinasi Terbuka
               </h4>
-              <p className="text-xs text-[#8c909f] leading-relaxed">
+              <p className="text-xs text-outline leading-relaxed">
                 Anda memiliki akses langsung ke Trello / Slack papan koordinasi studio kami, rekaman sesi diskusi harian, dan ringkasan progres terverifikasi tanpa perantara.
               </p>
-              <div className="pt-2 border-t border-white/5 flex items-center justify-between">
-                <span className="text-xs text-[#4cd7f6] font-semibold">
+              <div className="pt-2 border-t border-line flex items-center justify-between">
+                <span className="text-xs text-tertiary font-semibold">
                   Garansi Selesai Tepat Waktu
                 </span>
                 <button
                   onClick={onOpenConsultation}
-                  className="px-4 py-2 rounded-xl bg-[#4d8eff] text-[#00285d] font-bold text-xs hover:bg-[#adc6ff] transition-colors"
+                  className="px-4 py-2 rounded-xl bg-primary-container text-on-primary-container font-bold text-xs hover:bg-primary-hover transition-colors"
                 >
                   Mulai Proyek Anda →
                 </button>
@@ -190,30 +190,30 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
       {/* SLA Guarantees Strip */}
       <section className="max-w-[1280px] mx-auto px-5 md:px-12 py-12 mb-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-[#171b26] border border-white/5 flex flex-col gap-2">
-            <Icon name="verified" className=" text-[#4cd7f6] text-3xl" />
-            <h4 className="font-display text-base font-bold text-[#dfe2f1]">
+          <div className="p-6 rounded-2xl bg-surface-container-low border border-line flex flex-col gap-2">
+            <Icon name="verified" className=" text-tertiary text-3xl" />
+            <h4 className="font-display text-base font-bold text-on-surface">
               Garansi Kepemilikan 100%
             </h4>
-            <p className="text-xs text-[#8c909f] leading-relaxed">
+            <p className="text-xs text-outline leading-relaxed">
               Seluruh source code di repository GitHub, domain, dan server diserahkan sepenuhnya ke hak milik perusahaan Anda.
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-[#171b26] border border-white/5 flex flex-col gap-2">
-            <Icon name="bolt" className=" text-[#adc6ff] text-3xl" />
-            <h4 className="font-display text-base font-bold text-[#dfe2f1]">
+          <div className="p-6 rounded-2xl bg-surface-container-low border border-line flex flex-col gap-2">
+            <Icon name="bolt" className=" text-primary text-3xl" />
+            <h4 className="font-display text-base font-bold text-on-surface">
               Garansi Kecepatan Sub-1 Detik
             </h4>
-            <p className="text-xs text-[#8c909f] leading-relaxed">
+            <p className="text-xs text-outline leading-relaxed">
               Target skor PageSpeed 95+ di audit mobile dan desktop. Jika tidak tercapai, kami optimasi gratis sampai tuntas.
             </p>
           </div>
-          <div className="p-6 rounded-2xl bg-[#171b26] border border-white/5 flex flex-col gap-2">
-            <Icon name="support_agent" className=" text-[#c0c1ff] text-3xl" />
-            <h4 className="font-display text-base font-bold text-[#dfe2f1]">
+          <div className="p-6 rounded-2xl bg-surface-container-low border border-line flex flex-col gap-2">
+            <Icon name="support_agent" className=" text-secondary text-3xl" />
+            <h4 className="font-display text-base font-bold text-on-surface">
               Dukungan Pasca Rilis
             </h4>
-            <p className="text-xs text-[#8c909f] leading-relaxed">
+            <p className="text-xs text-outline leading-relaxed">
               Pendampingan bug fix 30-90 hari gratis serta video panduan mandiri untuk kemudahan operasional staf admin Anda.
             </p>
           </div>

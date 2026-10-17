@@ -140,13 +140,13 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Pusat Notifikasi Real-Time"
-        className="relative w-10 h-10 rounded-xl bg-[#1c1f2a] hover:bg-[#262a35] text-[#dfe2f1] flex items-center justify-center transition-all border border-white/5 focus:outline-none focus:ring-2 focus:ring-[#4d8eff]"
+        className="relative w-10 h-10 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-all border border-line focus:outline-none focus:ring-2 focus:ring-primary-container"
       >
-        <Icon name="notifications" className=" text-[20px] text-[#adc6ff]" />
+        <Icon name="notifications" className=" text-[20px] text-primary" />
         {unreadCount > 0 && (
           <span className="absolute -top-1 -right-1 flex h-5 w-5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4cd7f6] opacity-75"></span>
-            <span className="relative inline-flex items-center justify-center rounded-full h-5 w-5 bg-gradient-to-r from-[#4d8eff] to-[#3131c0] text-[10px] font-bold text-white shadow-md">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+            <span className="relative inline-flex items-center justify-center rounded-full h-5 w-5 bg-gradient-to-r from-primary-container to-secondary-container text-[10px] font-bold text-white shadow-md">
               {unreadCount > 9 ? '9+' : unreadCount}
             </span>
           </span>
@@ -155,12 +155,12 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
 
       {/* Dropdown Panel */}
       {isOpen && (
-        <div className="absolute right-0 mt-3 w-80 sm:w-96 rounded-2xl bg-[#171b26] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-2xl z-50 overflow-hidden text-left animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="absolute right-0 mt-3 w-80 sm:w-96 rounded-2xl bg-surface-container-low border border-line-strong shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-2xl z-50 overflow-hidden text-left animate-in fade-in slide-in-from-top-2 duration-200">
           {/* Header */}
-          <div className="p-4 bg-[#1c1f2a] border-b border-white/5 flex items-center justify-between">
+          <div className="p-4 bg-surface-container border-b border-line flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#4cd7f6] animate-pulse"></span>
-              <h3 className="font-semibold text-sm text-[#dfe2f1]">
+              <span className="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span>
+              <h3 className="font-semibold text-sm text-on-surface">
                 Real-Time Push Feeds
               </h3>
             </div>
@@ -169,7 +169,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
                 onClick={() => setSoundEnabled(!soundEnabled)}
                 title={soundEnabled ? 'Matikan Suara Chime' : 'Aktifkan Suara Chime'}
                 aria-label={soundEnabled ? 'Matikan suara notifikasi' : 'Aktifkan suara notifikasi'}
-                className="p-1 rounded text-[#8c909f] hover:text-[#dfe2f1] transition-colors"
+                className="p-1 rounded text-outline hover:text-on-surface transition-colors"
               >
                 <Icon
                   name={soundEnabled ? 'volume_up' : 'volume_off'}
@@ -179,7 +179,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
               {unreadCount > 0 && (
                 <button
                   onClick={markAllAsRead}
-                  className="text-xs text-[#adc6ff] hover:text-white font-medium transition-colors"
+                  className="text-xs text-primary hover:text-ink-strong font-medium transition-colors"
                 >
                   Tandai Dibaca
                 </button>
@@ -189,14 +189,14 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
 
           {/* Browser Push Permission Banner */}
           {browserPerm !== 'granted' && (
-            <div className="p-3 bg-gradient-to-r from-[#4d8eff]/15 to-[#3131c0]/15 border-b border-[#4d8eff]/20 flex items-center justify-between gap-3">
-              <div className="flex items-start gap-2 text-xs text-[#dfe2f1]">
-                <Icon name="devices" className=" text-base text-[#4cd7f6] shrink-0" />
+            <div className="p-3 bg-gradient-to-r from-primary-container/15 to-secondary-container/15 border-b border-primary-container/20 flex items-center justify-between gap-3">
+              <div className="flex items-start gap-2 text-xs text-on-surface">
+                <Icon name="devices" className=" text-base text-tertiary shrink-0" />
                 <span>Aktifkan push notifikasi browser untuk update instan SLA & proyek.</span>
               </div>
               <button
                 onClick={handleRequestPermission}
-                className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-[#4d8eff] hover:bg-[#adc6ff] text-[#00285d] shrink-0 transition-colors shadow-sm"
+                className="px-2.5 py-1 text-xs font-semibold rounded-lg bg-primary-container hover:bg-primary-hover text-on-primary-container shrink-0 transition-colors shadow-sm"
               >
                 Aktifkan
               </button>
@@ -204,10 +204,10 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
           )}
 
           {/* Controls Bar */}
-          <div className="px-4 py-2 bg-[#0f131d]/60 border-b border-white/5 flex items-center justify-between text-xs text-[#8c909f]">
+          <div className="px-4 py-2 bg-background/60 border-b border-line flex items-center justify-between text-xs text-outline">
             <button
               onClick={() => triggerNewNotification('⚡ Tes Push Notifikasi', 'Ini adalah simulasi push notifikasi real-time dari engine KeuvaWeb.', 'audit')}
-              className="inline-flex items-center gap-1 text-[#4cd7f6] hover:text-white transition-colors"
+              className="inline-flex items-center gap-1 text-tertiary hover:text-ink-strong transition-colors"
             >
               <Icon name="send" className=" text-[14px]" />
               <span>Kirim Tes Notifikasi</span>
@@ -217,11 +217,11 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
               <button
                 onClick={() => setIsSimulating(!isSimulating)}
                 className={`w-7 h-4 rounded-full transition-colors relative flex items-center ${
-                  isSimulating ? 'bg-[#4d8eff]' : 'bg-[#313540]'
+                  isSimulating ? 'bg-primary-container' : 'bg-surface-container-highest'
                 }`}
               >
                 <span
-                  className={`w-3 h-3 rounded-full bg-white transition-transform ${
+                  className={`w-3 h-3 rounded-full bg-ink-strong transition-transform ${
                     isSimulating ? 'translate-x-3.5' : 'translate-x-0.5'
                   }`}
                 />
@@ -230,29 +230,29 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
           </div>
 
           {/* Notification List */}
-          <div className="max-h-80 overflow-y-auto divide-y divide-white/5">
+          <div className="max-h-80 overflow-y-auto divide-y divide-line">
             {notifications.length === 0 ? (
-              <div className="p-6 text-center text-[#8c909f] text-xs">
-                <Icon name="notifications_paused" className=" text-2xl text-[#313540] mb-1" />
+              <div className="p-6 text-center text-outline text-xs">
+                <Icon name="notifications_paused" className=" text-2xl text-outline-variant mb-1" />
                 <p>Belum ada notifikasi baru.</p>
               </div>
             ) : (
               notifications.map((notif) => (
                 <div
                   key={notif.id}
-                  className={`p-3.5 hover:bg-[#1c1f2a] transition-colors flex items-start gap-3 ${
-                    notif.unread ? 'bg-[#1c1f2a]/50' : ''
+                  className={`p-3.5 hover:bg-surface-container transition-colors flex items-start gap-3 ${
+                    notif.unread ? 'bg-surface-container/50' : ''
                   }`}
                 >
                   <div
                     className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
                       notif.type === 'audit'
-                        ? 'bg-[#4cd7f6]/15 text-[#4cd7f6]'
+                        ? 'bg-tertiary/15 text-tertiary'
                         : notif.type === 'launch'
-                        ? 'bg-[#4d8eff]/15 text-[#4d8eff]'
+                        ? 'bg-primary-container/15 text-primary-container'
                         : notif.type === 'lead'
-                        ? 'bg-[#c0c1ff]/15 text-[#c0c1ff]'
-                        : 'bg-[#262a35] text-[#dfe2f1]'
+                        ? 'bg-secondary/15 text-secondary'
+                        : 'bg-surface-container-high text-on-surface'
                     }`}
                   >
                     <Icon
@@ -270,19 +270,19 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-1 mb-0.5">
-                      <p className="text-xs font-semibold text-[#dfe2f1] truncate">
+                      <p className="text-xs font-semibold text-on-surface truncate">
                         {notif.title}
                       </p>
-                      <span className="text-[10px] text-[#8c909f] whitespace-nowrap">
+                      <span className="text-[10px] text-outline whitespace-nowrap">
                         {notif.timestamp}
                       </span>
                     </div>
-                    <p className="text-xs text-[#c2c6d6] leading-relaxed">
+                    <p className="text-xs text-on-surface-variant leading-relaxed">
                       {notif.message}
                     </p>
                   </div>
                   {notif.unread && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#4cd7f6] shrink-0 mt-1.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-tertiary shrink-0 mt-1.5" />
                   )}
                 </div>
               ))
@@ -290,10 +290,10 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
           </div>
 
           {/* Footer of panel */}
-          <div className="p-3 bg-[#1c1f2a] border-t border-white/5 flex items-center justify-between">
+          <div className="p-3 bg-surface-container border-t border-line flex items-center justify-between">
             <button
               onClick={clearAll}
-              className="text-xs text-[#8c909f] hover:text-[#dfe2f1] transition-colors"
+              className="text-xs text-outline hover:text-on-surface transition-colors"
             >
               Hapus Semua
             </button>
@@ -303,7 +303,7 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
                   setIsOpen(false);
                   onOpenConsultation();
                 }}
-                className="text-xs font-medium text-[#4cd7f6] hover:underline"
+                className="text-xs font-medium text-tertiary hover:underline"
               >
                 Mulai Konsultasi →
               </button>
@@ -314,28 +314,28 @@ export const NotificationCenter: React.FC<NotificationCenterProps> = ({ onOpenCo
 
       {/* Floating In-App Toast Popup */}
       {activeToast && (
-        <div className="fixed bottom-6 right-6 z-50 max-w-sm w-full bg-[#171b26]/95 border border-[#4d8eff]/40 backdrop-blur-xl p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] text-left animate-in slide-in-from-bottom-4 duration-300">
+        <div className="fixed bottom-6 right-6 z-50 max-w-sm w-full bg-surface-container-low/95 border border-primary-container/40 backdrop-blur-xl p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] text-left animate-in slide-in-from-bottom-4 duration-300">
           <div className="flex items-start justify-between gap-3">
-            <div className="w-8 h-8 rounded-lg bg-[#4d8eff]/20 text-[#4cd7f6] flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-primary-container/20 text-tertiary flex items-center justify-center shrink-0">
               <Icon name="bolt" className=" text-lg" />
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#4cd7f6]">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-tertiary">
                   Push Notifikasi
                 </span>
-                <span className="text-[10px] text-[#8c909f]">Baru saja</span>
+                <span className="text-[10px] text-outline">Baru saja</span>
               </div>
-              <h4 className="text-xs font-bold text-[#dfe2f1] mb-1">
+              <h4 className="text-xs font-bold text-on-surface mb-1">
                 {activeToast.title}
               </h4>
-              <p className="text-xs text-[#c2c6d6] leading-relaxed">
+              <p className="text-xs text-on-surface-variant leading-relaxed">
                 {activeToast.message}
               </p>
             </div>
             <button
               onClick={() => setActiveToast(null)}
-              className="text-[#8c909f] hover:text-white p-1"
+              className="text-outline hover:text-ink-strong p-1"
             >
               <Icon name="close" className=" text-sm" />
             </button>

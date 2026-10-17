@@ -178,35 +178,35 @@ export const LegalView: React.FC<LegalViewProps> = ({ kind }) => {
     <div className="w-full max-w-[820px] mx-auto px-5 md:px-12 py-16">
       <Link
         to={TAB_PATHS.beranda}
-        className="inline-flex items-center gap-2 text-xs font-medium text-[#8c909f] hover:text-[#dfe2f1] transition-colors mb-8"
+        className="inline-flex items-center gap-2 text-xs font-medium text-outline hover:text-on-surface transition-colors mb-8"
       >
         <Icon name="arrow_back" className=" text-sm" />
         Kembali ke Beranda
       </Link>
 
-      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#4d8eff]/15 text-[#adc6ff] text-[11px] font-bold uppercase tracking-wider">
+      <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/15 text-primary text-[11px] font-bold uppercase tracking-wider">
         {content.badge}
       </span>
 
-      <h1 className="font-display text-3xl md:text-4xl font-bold text-white mt-4 mb-3">
+      <h1 className="font-display text-3xl md:text-4xl font-bold text-ink-strong mt-4 mb-3">
         {content.title}
       </h1>
-      <p className="text-sm text-[#8c909f] mb-2">
+      <p className="text-sm text-outline mb-2">
         Terakhir diperbarui: {lastUpdated}
       </p>
-      <p className="text-[15px] text-[#c2c6d6] leading-relaxed mb-10">
+      <p className="text-[15px] text-on-surface-variant leading-relaxed mb-10">
         {content.intro}
       </p>
 
       <div className="flex flex-col gap-8">
         {content.sections.map((section) => (
           <section key={section.heading}>
-            <h2 className="font-display text-lg font-bold text-[#dfe2f1] mb-3">
+            <h2 className="font-display text-lg font-bold text-on-surface mb-3">
               {section.heading}
             </h2>
             <div className="flex flex-col gap-3">
               {section.body.map((paragraph, index) => (
-                <p key={index} className="text-sm text-[#8c909f] leading-relaxed">
+                <p key={index} className="text-sm text-outline leading-relaxed">
                   {paragraph}
                 </p>
               ))}
@@ -215,39 +215,39 @@ export const LegalView: React.FC<LegalViewProps> = ({ kind }) => {
         ))}
       </div>
 
-      <div className="mt-12 p-6 rounded-2xl bg-[#171b26] border border-white/5">
-        <h3 className="font-display text-base font-bold text-[#dfe2f1] mb-2">
+      <div className="mt-12 p-6 rounded-2xl bg-surface-container-low border border-line">
+        <h3 className="font-display text-base font-bold text-on-surface mb-2">
           Ada pertanyaan?
         </h3>
-        <p className="text-sm text-[#8c909f] mb-4">
+        <p className="text-sm text-outline mb-4">
           Hubungi kami untuk klarifikasi terkait {content.title.toLowerCase()}.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link
             to={TAB_PATHS.kontak}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#4d8eff] text-[#00285d] text-sm font-semibold hover:bg-[#6aa3ff] transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-container text-on-primary-container text-sm font-semibold hover:bg-primary-soft transition-colors"
           >
             <Icon name="chat" className=" text-base" />
             Hubungi Kami
           </Link>
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#262a35] text-[#dfe2f1] text-sm font-semibold hover:bg-[#313540] transition-colors border border-white/5"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high text-on-surface text-sm font-semibold hover:bg-surface-container-highest transition-colors border border-line"
           >
-            <Icon name="mail" className=" text-base text-[#4cd7f6]" />
+            <Icon name="mail" className=" text-base text-tertiary" />
             {CONTACT_EMAIL}
           </a>
         </div>
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-[#8c909f]">
+      <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-outline">
         {(Object.keys(LEGAL_PATHS) as LegalKind[])
           .filter((key) => key !== kind)
           .map((key) => (
             <Link
               key={key}
               to={LEGAL_PATHS[key]}
-              className="hover:text-[#dfe2f1] transition-colors"
+              className="hover:text-on-surface transition-colors"
             >
               {CONTENT[key].title}
             </Link>

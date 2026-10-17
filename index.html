@@ -1,8 +1,18 @@
 <!doctype html>
-<html lang="id" class="dark">
+<html lang="id" data-theme="dark" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('keuva-theme');
+          if (t !== 'light' && t !== 'dark') t = 'dark';
+          document.documentElement.setAttribute('data-theme', t);
+          document.documentElement.classList.toggle('dark', t === 'dark');
+        } catch (e) {}
+      })();
+    </script>
     <title>KeuvaWeb — Rekayasa Website Konversi Tertinggi</title>
     <meta name="description" content="Kami merekayasa arsitektur web performa tinggi dengan skor PageSpeed 95+, UX persuasif berorientasi konversi, serta infrastruktur cloud modern yang memacu pertumbuhan omset bisnis Anda." />
     <meta name="theme-color" content="#0f131d" />
@@ -33,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-[#0f131d] text-[#dfe2f1] font-sans antialiased selection:bg-[#4d8eff] selection:text-[#00285d]">
+  <body class="bg-background text-on-surface font-sans antialiased selection:bg-primary-container selection:text-on-primary-container">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
