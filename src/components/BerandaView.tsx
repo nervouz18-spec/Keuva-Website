@@ -205,32 +205,6 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
           </div>
         </section>
 
-        {/* TRUSTED CLIENTS / TECH MARQUEE */}
-        <div className="w-full bg-surface-container-lowest py-8 border-y border-line">
-          <div className="max-w-[1280px] mx-auto px-5 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-outline whitespace-nowrap">
-              Dipercaya oleh Perusahaan & Brand Inovatif
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-8 opacity-65 hover:opacity-100 transition-opacity">
-              <span className="font-display text-lg font-extrabold text-on-surface tracking-tighter">
-                NEXAFIN
-              </span>
-              <span className="font-display text-lg font-extrabold text-on-surface tracking-tighter">
-                AEROTRACK
-              </span>
-              <span className="font-display text-lg font-extrabold text-on-surface tracking-tighter">
-                LOGIKATECH
-              </span>
-              <span className="font-display text-lg font-extrabold text-on-surface tracking-tighter">
-                KINETIC.ID
-              </span>
-              <span className="font-display text-lg font-extrabold text-on-surface tracking-tighter">
-                VENTURAPAY
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* 2. LAYANAN UNGGULAN */}
         <section className="max-w-[1280px] mx-auto px-5 md:px-12 py-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
