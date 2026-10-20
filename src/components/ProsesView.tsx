@@ -14,7 +14,6 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
     {
       num: '01',
       title: 'Discovery & Brief Strategis',
-      timeline: 'Hari 1 - 2',
       tagline: 'Membedah Anatomi Bisnis & Posisi Kompetitor',
       desc: 'Kami menyelenggarakan sesi wawancara mendalam dengan tim Anda untuk memetakan tujuan komersial, profil persona pembeli ideal, proposisi nilai unik (USP), serta struktur penawaran yang terbukti konversinya.',
       deliverables: [
@@ -28,7 +27,6 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
     {
       num: '02',
       title: 'Desain UI/UX & Interactive Prototype',
-      timeline: 'Hari 3 - 6',
       tagline: 'Eksplorasi Estetika Visual Presisi di Figma',
       desc: 'Merancang tata letak visual modern tingkat tinggi yang mencerminkan otoritas brand Anda. Setiap interaksi diuji dalam prototipe klik interaktif sehingga Anda dapat merasakan alur pengguna nyata sebelum sebaris kode pun ditulis.',
       deliverables: [
@@ -42,7 +40,6 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
     {
       num: '03',
       title: 'Koding & Integrasi Sistem',
-      timeline: 'Hari 7 - 12',
       tagline: 'Rekayasa Kode Bersih Bebas Bloatware',
       desc: 'Implementasi frontend modern menggunakan Next.js / React dan Tailwind CSS. Kami mengintegrasikan formulir leads cerdas, routing WhatsApp otomatis, pelacakan Meta CAPI & GA4 tanpa terblokir adblocker, serta CMS mandiri.',
       deliverables: [
@@ -56,7 +53,6 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
     {
       num: '04',
       title: 'Testing, Audit Keamanan & Go-Live',
-      timeline: 'Hari 13+',
       tagline: 'Peluncuran Sempurna Siap Memacu Omset',
       desc: 'Uji coba komprehensif di lebih dari 15 resolusi perangkat, audit Google Lighthouse Core Web Vitals (target 95+), enkripsi SSL Grade A+, migrasi domain resmi, dan penyerahan video panduan admin.',
       deliverables: [
@@ -116,7 +112,6 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
                   >
                     {st.num}
                   </span>
-                  <span className="text-[11px] font-semibold text-outline">{st.timeline}</span>
                 </div>
                 <h4 className="font-display text-sm font-bold text-on-surface">{st.title}</h4>
               </button>
@@ -130,7 +125,7 @@ export const ProsesView: React.FC<ProsesViewProps> = ({ onTabChange, onOpenConsu
             <div className="lg:col-span-7 flex flex-col gap-4">
               <div className="flex items-center gap-2">
                 <span className="text-xs font-bold text-tertiary uppercase tracking-wider">
-                  Fase {steps[activeStep].num} · {steps[activeStep].timeline}
+                  Fase {steps[activeStep].num}
                 </span>
               </div>
               <h3 className="font-display text-2xl md:text-3xl text-ink-strong font-bold">
