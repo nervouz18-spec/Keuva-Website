@@ -5,6 +5,7 @@ import {
   ADDON_CONFIG,
   ADDON_KEYS,
   COMPARISON_ROWS,
+  FEATURE_MATRIX,
   MODULE_CONFIG,
   MODULE_KEYS,
   PRICING_FAQ,
@@ -384,188 +385,73 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
                   <th className="p-4 font-bold text-on-surface text-center w-1/5 text-sm">Business System</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-line text-on-surface-variant">
-                {/* Row Group: Fondasi & Cakupan */}
-                <tr className="bg-surface-container-lowest">
-                  <td
-                    className="p-2.5 px-4 text-[10px] font-bold uppercase tracking-wider text-outline"
-                    colSpan={4}
-                  >
-                    Fondasi & Cakupan
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Estimasi Pengerjaan</td>
-                  <td className="p-4 text-center">1–3 Hari Kerja</td>
-                  <td className="p-4 text-center text-primary font-bold bg-surface-container-high/30">
-                    3–5 Hari Kerja
-                  </td>
-                  <td className="p-4 text-center">5–14 Hari Kerja</td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Struktur Halaman</td>
-                  <td className="p-4 text-center">Landing page / website sederhana</td>
-                  <td className="p-4 text-center text-primary font-bold bg-surface-container-high/30">
-                    Company profile hingga 6 halaman
-                  </td>
-                  <td className="p-4 text-center">Aplikasi web (login, database)</td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Desain</td>
-                  <td className="p-4 text-center">Responsif</td>
-                  <td className="p-4 text-center text-primary font-bold bg-surface-container-high/30">
-                    Semi-custom & responsif
-                  </td>
-                  <td className="p-4 text-center">Dashboard admin kustom</td>
-                </tr>
-
-                {/* Row Group: Fungsional & Fitur */}
-                <tr className="bg-surface-container-lowest">
-                  <td
-                    className="p-2.5 px-4 text-[10px] font-bold uppercase tracking-wider text-outline"
-                    colSpan={4}
-                  >
-                    Fungsional & Fitur
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Informasi produk & layanan</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                  <td className="p-4 text-center bg-surface-container-high/30">
-                    <Icon name="check" className=" text-primary text-base" />
-                  </td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Tombol WhatsApp & kontak</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                  <td className="p-4 text-center bg-surface-container-high/30">
-                    <Icon name="check" className=" text-primary text-base" />
-                  </td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Form kontak</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center bg-surface-container-high/30">
-                    <Icon name="check" className=" text-primary text-base" />
-                  </td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Katalog layanan / produk</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center bg-surface-container-high/30">
-                    <Icon name="check" className=" text-primary text-base" />
-                  </td>
-                  <td className="p-4 text-center">Pengelolaan data pelanggan/pesanan</td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Login & hak akses pengguna</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center text-outline bg-surface-container-high/30">-</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Database & CRUD</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center text-outline bg-surface-container-high/30">-</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Dashboard admin</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center text-outline bg-surface-container-high/30">-</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Laporan dasar</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center text-outline bg-surface-container-high/30">-</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Integrasi API</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center text-primary bg-surface-container-high/30">
-                    Sederhana (bila disepakati)
-                  </td>
-                  <td className="p-4 text-center text-outline">-</td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">SEO dasar</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                  <td className="p-4 text-center bg-surface-container-high/30">
-                    <Icon name="check" className=" text-primary text-base" />
-                  </td>
-                  <td className="p-4 text-center text-outline">-</td>
-                </tr>
-
-                {/* Row Group: Dukungan & Serah Terima */}
-                <tr className="bg-surface-container-lowest">
-                  <td
-                    className="p-2.5 px-4 text-[10px] font-bold uppercase tracking-wider text-outline"
-                    colSpan={4}
-                  >
-                    Dukungan & Serah Terima
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Jumlah Revisi</td>
-                  <td className="p-4 text-center">2 kali</td>
-                  <td className="p-4 text-center text-primary font-bold bg-surface-container-high/30">3 kali</td>
-                  <td className="p-4 text-center">Sesuai kesepakatan</td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Dokumentasi & pelatihan singkat</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center text-outline bg-surface-container-high/30">-</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">Pengujian fungsional</td>
-                  <td className="p-4 text-center text-outline">-</td>
-                  <td className="p-4 text-center text-outline bg-surface-container-high/30">-</td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
-                <tr className="hover:bg-surface-container transition-colors">
-                  <td className="p-4 text-on-surface font-medium">
-                    Kepemilikan Source Code (100% Hak Klien)
-                  </td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                  <td className="p-4 text-center bg-surface-container-high/30">
-                    <Icon name="check" className=" text-primary text-base" />
-                  </td>
-                  <td className="p-4 text-center">
-                    <Icon name="check" className=" text-tertiary text-base" />
-                  </td>
-                </tr>
+                            <tbody className="divide-y divide-line text-on-surface-variant">
+                {FEATURE_MATRIX.map((entry, i) =>
+                  entry.type === 'group' ? (
+                    <tr key={i} className="bg-surface-container-lowest">
+                      <td
+                        className="p-2.5 px-4 text-[10px] font-bold uppercase tracking-wider text-outline"
+                        colSpan={4}
+                      >
+                        {entry.label}
+                      </td>
+                    </tr>
+                  ) : (
+                    <tr key={i} className="hover:bg-surface-container transition-colors">
+                      <td className="p-4 text-on-surface font-medium">{entry.label}</td>
+                      {entry.cells.map((cell, j) => {
+                        const featured = j === 1;
+                        if (cell.kind === 'check') {
+                          return (
+                            <td
+                              key={j}
+                              className={
+                                featured
+                                  ? 'p-4 text-center bg-surface-container-high/30'
+                                  : 'p-4 text-center'
+                              }
+                            >
+                              <Icon
+                                name="check"
+                                className={
+                                  featured
+                                    ? ' text-primary text-base'
+                                    : ' text-tertiary text-base'
+                                }
+                              />
+                            </td>
+                          );
+                        }
+                        if (cell.kind === 'dash') {
+                          return (
+                            <td
+                              key={j}
+                              className={
+                                featured
+                                  ? 'p-4 text-center text-outline bg-surface-container-high/30'
+                                  : 'p-4 text-center text-outline'
+                              }
+                            >
+                              -
+                            </td>
+                          );
+                        }
+                        return (
+                          <td
+                            key={j}
+                            className={
+                              featured
+                                ? 'p-4 text-center text-primary font-bold bg-surface-container-high/30'
+                                : 'p-4 text-center'
+                            }
+                          >
+                            {cell.text}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  )
+                )}
               </tbody>
             </table>
           </div>

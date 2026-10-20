@@ -145,3 +145,129 @@ export const PRICING_FAQ = [
     a: 'Anda dapat memperpanjang paket Maintenance & Care Bulanan kami yang fleksibel, atau menghubungi kami kapan saja dengan sistem on-demand task hourly rate yang sangat kompetitif dan transparan.',
   },
 ];
+
+export type MatrixCell =
+  | { kind: 'check' }
+  | { kind: 'dash' }
+  | { kind: 'text'; text: string };
+
+export type MatrixEntry =
+  | { type: 'group'; label: string }
+  | { type: 'row'; label: string; cells: [MatrixCell, MatrixCell, MatrixCell] };
+
+export const FEATURE_MATRIX: MatrixEntry[] = [
+  { type: 'group', label: 'Fondasi & Cakupan' },
+  {
+    type: 'row',
+    label: 'Estimasi Pengerjaan',
+    cells: [
+      { kind: 'text', text: '1–3 Hari Kerja' },
+      { kind: 'text', text: '3–5 Hari Kerja' },
+      { kind: 'text', text: '5–14 Hari Kerja' },
+    ],
+  },
+  {
+    type: 'row',
+    label: 'Struktur Halaman',
+    cells: [
+      { kind: 'text', text: 'Landing page / website sederhana' },
+      { kind: 'text', text: 'Company profile hingga 6 halaman' },
+      { kind: 'text', text: 'Aplikasi web (login, database)' },
+    ],
+  },
+  {
+    type: 'row',
+    label: 'Desain',
+    cells: [
+      { kind: 'text', text: 'Responsif' },
+      { kind: 'text', text: 'Semi-custom & responsif' },
+      { kind: 'text', text: 'Dashboard admin kustom' },
+    ],
+  },
+
+  { type: 'group', label: 'Fungsional & Fitur' },
+  {
+    type: 'row',
+    label: 'Informasi produk & layanan',
+    cells: [{ kind: 'check' }, { kind: 'check' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Tombol WhatsApp & kontak',
+    cells: [{ kind: 'check' }, { kind: 'check' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Form kontak',
+    cells: [{ kind: 'dash' }, { kind: 'check' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Katalog layanan / produk',
+    cells: [
+      { kind: 'dash' },
+      { kind: 'check' },
+      { kind: 'text', text: 'Pengelolaan data pelanggan/pesanan' },
+    ],
+  },
+  {
+    type: 'row',
+    label: 'Login & hak akses pengguna',
+    cells: [{ kind: 'dash' }, { kind: 'dash' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Database & CRUD',
+    cells: [{ kind: 'dash' }, { kind: 'dash' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Dashboard admin',
+    cells: [{ kind: 'dash' }, { kind: 'dash' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Laporan dasar',
+    cells: [{ kind: 'dash' }, { kind: 'dash' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Integrasi API',
+    cells: [
+      { kind: 'dash' },
+      { kind: 'text', text: 'Sederhana (bila disepakati)' },
+      { kind: 'dash' },
+    ],
+  },
+  {
+    type: 'row',
+    label: 'SEO dasar',
+    cells: [{ kind: 'check' }, { kind: 'check' }, { kind: 'dash' }],
+  },
+
+  { type: 'group', label: 'Dukungan & Serah Terima' },
+  {
+    type: 'row',
+    label: 'Jumlah Revisi',
+    cells: [
+      { kind: 'text', text: '2 kali' },
+      { kind: 'text', text: '3 kali' },
+      { kind: 'text', text: 'Sesuai kesepakatan' },
+    ],
+  },
+  {
+    type: 'row',
+    label: 'Dokumentasi & pelatihan singkat',
+    cells: [{ kind: 'dash' }, { kind: 'dash' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Pengujian fungsional',
+    cells: [{ kind: 'dash' }, { kind: 'dash' }, { kind: 'check' }],
+  },
+  {
+    type: 'row',
+    label: 'Kepemilikan Source Code (100% Hak Klien)',
+    cells: [{ kind: 'check' }, { kind: 'check' }, { kind: 'check' }],
+  },
+];
