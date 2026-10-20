@@ -259,7 +259,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   <span className="text-[10px] uppercase font-bold text-outline">
                     Durasi Pengerjaan
                   </span>
-                  <span className="text-sm font-semibold text-on-surface">3 - 7 Hari Kerja</span>
+                  <span className="text-sm font-semibold text-on-surface">1 - 3 Hari Kerja</span>
                 </div>
                 <button
                   onClick={onOpenConsultation}
@@ -313,7 +313,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   <span className="text-[10px] uppercase font-bold text-outline">
                     Durasi Pengerjaan
                   </span>
-                  <span className="text-sm font-semibold text-on-surface">10 - 18 Hari Kerja</span>
+                  <span className="text-sm font-semibold text-on-surface">3 - 5 Hari Kerja</span>
                 </div>
                 <button
                   onClick={onOpenConsultation}
@@ -361,7 +361,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   <span className="text-[10px] uppercase font-bold text-outline">
                     Durasi Pengerjaan
                   </span>
-                  <span className="text-sm font-semibold text-on-surface">14 - 30 Hari Kerja</span>
+                  <span className="text-sm font-semibold text-on-surface">5 - 14 Hari Kerja</span>
                 </div>
                 <button
                   onClick={onOpenConsultation}
@@ -618,7 +618,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                 <div className="flex items-baseline gap-1 py-2">
                   <span className="text-xs text-outline">Mulai</span>
                   <span className="font-display text-3xl font-extrabold text-on-surface">
-                    Rp 1,5jt
+                    Rp 500rb
                   </span>
                   <span className="text-xs text-outline">/sekali bayar</span>
                 </div>
@@ -674,7 +674,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                 <div className="flex items-baseline gap-1 py-2">
                   <span className="text-xs text-outline">Mulai</span>
                   <span className="font-display text-3xl font-extrabold text-primary">
-                    Rp 3,5jt
+                    Rp 1.5jt
                   </span>
                   <span className="text-xs text-outline">/sekali bayar</span>
                 </div>
@@ -729,7 +729,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                 <div className="flex items-baseline gap-1 py-2">
                   <span className="text-xs text-outline">Mulai</span>
                   <span className="font-display text-3xl font-extrabold text-on-surface">
-                    Rp 6jt
+                    Rp 3jt
                   </span>
                   <span className="text-xs text-outline">/sesuai spek</span>
                 </div>
