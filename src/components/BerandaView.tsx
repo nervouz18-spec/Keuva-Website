@@ -528,10 +528,6 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   Diskusi mendalam untuk memetakan tujuan bisnis, profil audiens target, analisis kompetitor, dan struktur penawaran produk Anda.
                 </p>
               </div>
-              <div className="pt-2 flex items-center gap-1.5 text-xs text-tertiary font-medium">
-                <Icon name="schedule" className=" text-sm" />
-                <span>Hari 1 - 2</span>
-              </div>
             </div>
 
             {/* Step 2 */}
@@ -545,10 +541,6 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   Pembuatan wireframe dan mockup visual interaktif di Figma. Anda dapat mencoba alur klik langsung sebelum sebaris kode ditulis.
                 </p>
               </div>
-              <div className="pt-2 flex items-center gap-1.5 text-xs text-tertiary font-medium">
-                <Icon name="schedule" className=" text-sm" />
-                <span>Hari 3 - 6</span>
-              </div>
             </div>
 
             {/* Step 3 */}
@@ -559,10 +551,6 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                 <p className="text-xs text-outline leading-relaxed">
                   Implementasi kode bersih berkecepatan tinggi, integrasi WhatsApp, analitik pelacak piksel, formulir data, dan setup CMS mandiri.
                 </p>
-              </div>
-              <div className="pt-2 flex items-center gap-1.5 text-xs text-tertiary font-medium">
-                <Icon name="schedule" className=" text-sm" />
-                <span>Hari 7 - 12</span>
               </div>
             </div>
 
