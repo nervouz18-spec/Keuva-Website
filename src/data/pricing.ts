@@ -1,12 +1,12 @@
 export const MODULE_CONFIG = {
-  starter: { label: 'Starter Website', sub: 'Website sederhana', price: 1500000, days: 5 },
+  starter: { label: 'Starter Website', sub: 'Website sederhana', price: 500000, days: 3 },
   business: {
     label: 'Business Website',
     sub: 'Company profile 6 halaman',
-    price: 3500000,
-    days: 10,
+    price: 1500000,
+    days: 5,
   },
-  system: { label: 'Business System', sub: 'Aplikasi web full-stack', price: 6000000, days: 25 },
+  system: { label: 'Business System', sub: 'Aplikasi web full-stack', price: 3000000, days: 14 },
 } as const;
 
 export const MODULE_KEYS = ['starter', 'business', 'system'] as const;
@@ -47,7 +47,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'starter',
     eyebrow: 'Entry-level',
-    delivery: '3–7 Hari Kerja',
+    delivery: '1–3 Hari Kerja',
     name: 'Starter Website',
     tagline: 'Cocok untuk usaha kecil yang baru mulai online.',
     priceNote: 'Sekali bayar untuk jasa pengerjaan',
@@ -67,7 +67,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     featured: true,
     badge: 'Prioritas',
     eyebrow: 'Populer',
-    delivery: '7–14 Hari Kerja',
+    delivery: '3–5 Hari Kerja',
     name: 'Business Website',
     tagline:
       'Cocok untuk bisnis lokal yang ingin tampil profesional dan menerima pelanggan secara online.',
@@ -87,7 +87,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'system',
     eyebrow: 'Full-stack',
-    delivery: '2–5 Minggu',
+    delivery: '5–14 Hari Kerja',
     name: 'Business System',
     tagline: 'Cocok untuk bisnis yang ingin mengelola operasional melalui aplikasi web.',
     pricePrefix: 'Mulai',
@@ -111,8 +111,8 @@ export const COMPARISON_ROWS: {
   business: string;
   system: string;
 }[] = [
-  { label: 'Harga', starter: 'Rp 1.500.000', business: 'Rp 3.500.000', system: 'Mulai Rp 6.000.000' },
-  { label: 'Estimasi pengerjaan', starter: '3-7 hari kerja', business: '7-14 hari kerja', system: '2-5 minggu' },
+  { label: 'Harga', starter: 'Rp 500.000', business: 'Rp 1.500.000', system: 'Mulai Rp 3.000.000' },
+  { label: 'Estimasi pengerjaan', starter: '1-3 hari kerja', business: '3-5 hari kerja', system: '5-14 hari kerja' },
   { label: 'Jumlah halaman', starter: 'Landing page', business: 'Hingga 6 halaman', system: 'Tak terbatas' },
   { label: 'Tingkat desain', starter: 'Responsif', business: 'Semi-custom', system: 'Custom penuh' },
   { label: 'Form kontak & WhatsApp', starter: '✓', business: '✓', system: '✓' },

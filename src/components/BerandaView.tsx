@@ -47,7 +47,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
     },
     {
       q: 'Berapa lama rata-rata proses pengerjaan dari awal hingga tayang?',
-      a: 'Untuk paket Starter Website selesai dalam 3 hingga 7 hari kerja. Paket Business Website rata-rata memerlukan 7 hingga 14 hari kerja. Proyek Business System atau aplikasi web kustom memerlukan 2 hingga 5 minggu, disesuaikan dengan kelengkapan materi dan integrasi sistem.',
+      a: 'Untuk paket Starter Website selesai dalam 1 hingga 3 hari kerja. Paket Business Website rata-rata memerlukan 3 hingga 5 hari kerja. Proyek Business System atau aplikasi web kustom memerlukan 5 hingga 14 hari kerja, disesuaikan dengan kelengkapan materi dan integrasi sistem.',
     },
     {
       q: 'Apakah ada garansi maintenance jika terjadi kendala teknis?',

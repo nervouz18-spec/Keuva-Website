@@ -396,11 +396,11 @@ export const PaketHargaView: React.FC<PaketHargaViewProps> = ({
                 </tr>
                 <tr className="hover:bg-surface-container transition-colors">
                   <td className="p-4 text-on-surface font-medium">Estimasi Pengerjaan</td>
-                  <td className="p-4 text-center">3–7 Hari Kerja</td>
+                  <td className="p-4 text-center">1–3 Hari Kerja</td>
                   <td className="p-4 text-center text-primary font-bold bg-surface-container-high/30">
-                    7–14 Hari Kerja
+                    3–5 Hari Kerja
                   </td>
-                  <td className="p-4 text-center">2–5 Minggu</td>
+                  <td className="p-4 text-center">5–14 Hari Kerja</td>
                 </tr>
                 <tr className="hover:bg-surface-container transition-colors">
                   <td className="p-4 text-on-surface font-medium">Struktur Halaman</td>
