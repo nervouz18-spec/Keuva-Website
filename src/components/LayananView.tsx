@@ -601,7 +601,7 @@ export const LayananView: React.FC<LayananViewProps> = ({
                     </button>
                     <span className="text-xs text-outline flex items-center gap-1.5">
                       <Icon name="check_circle" className=" text-sm text-tertiary" />
-                      Selesai dalam 7-14 hari
+                      Estimasi pengerjaan 7-14 hari
                     </span>
                   </div>
                 </div>
