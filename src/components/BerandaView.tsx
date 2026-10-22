@@ -783,22 +783,16 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   ))}
                 </div>
                 <p className="text-sm text-on-surface-variant italic leading-relaxed">
-                  “Sejak website baru kami rilis oleh KeuvaWeb, konversi leads dari iklan Google naik lebih dari 200%. Load speed-nya instan saat dibuka dari HP, klien tender kami pun sangat memuji profesionalitas desainnya.”
+                  “Sistem kalkulasi pajak dan laba pengadaan yang dibuat KeuvaWeb sangat membantu. Data yang diinput otomatis terhitung bersama PPN, lalu langsung masuk ke kalkulator keuntungan. Pekerjaan jadi jauh lebih cepat dan minim kesalahan hitung.”
                 </p>
               </div>
               <div className="flex items-center gap-3 pt-6 mt-6 border-t border-line">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
-                  <LazyImage
-                    src="/images/testi-hendrawan.webp"
-                    alt="Hendrawan Pratama"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center font-bold text-lg shrink-0">
+                  C
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-semibold text-on-surface">Hendrawan Pratama</span>
-                  <span className="text-xs text-outline">
-                    Direktur Operasional, PT Finansia Solusi
-                  </span>
+                  <span className="text-sm font-semibold text-on-surface">C********</span>
+                  <span className="text-xs text-outline">Direktur</span>
                 </div>
               </div>
             </div>
@@ -817,20 +811,16 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   ))}
                 </div>
                 <p className="text-sm text-on-surface-variant italic leading-relaxed">
-                  “Sebelumnya pakai template WordPress biasa sering error dan lemot. Tim KeuvaWeb mengubah arsitektur toko kami ke Headless Shopify. Checkout kilat bikin abandon cart kami berkurang 40%!”
+                  “Registrasi peserta, pembayaran QRIS, sampai manajemen tim berjalan mulus dalam satu sistem. Panel admin memudahkan kami memantau pendaftaran, dan fitur reset password lewat Gmail API menghemat banyak waktu panitia.”
                 </p>
               </div>
               <div className="flex items-center gap-3 pt-6 mt-6 border-t border-line">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
-                  <LazyImage
-                    src="/images/testi-clarissa.webp"
-                    alt="Clarissa Novita"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full bg-tertiary-container/25 text-tertiary flex items-center justify-center font-bold text-lg shrink-0">
+                  F
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-semibold text-on-surface">Clarissa Novita</span>
-                  <span className="text-xs text-outline">Founder, AURA Label</span>
+                  <span className="text-sm font-semibold text-on-surface">F**** A***</span>
+                  <span className="text-xs text-outline">Ketua Project</span>
                 </div>
               </div>
             </div>
@@ -849,24 +839,16 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   ))}
                 </div>
                 <p className="text-sm text-on-surface-variant italic leading-relaxed">
-                  “Proses koordinasi luar biasa tertata. Deadline terpenuhi tepat waktu tanpa drama revisi tak berujung. Dashboard CMS yang disediakan sangat mudah diedit oleh tim admin kami sendiri.”
+                  “Web aplikasi sistem perdataan untuk kantor P3MI kami dikerjakan rapi dan sesuai kebutuhan. Data tersusun jelas, mudah dicari, dan alur administrasinya jauh lebih efisien dibanding cara manual sebelumnya.”
                 </p>
               </div>
               <div className="flex items-center gap-3 pt-6 mt-6 border-t border-line">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
-                  <LazyImage
-                    src="/images/testi-bambang.webp"
-                    alt="Ir. Bambang Sudirman"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-12 h-12 rounded-full bg-primary-container/20 text-primary flex items-center justify-center font-bold text-lg shrink-0">
+                  P
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm font-semibold text-on-surface">
-                    Ir. Bambang Sudirman
-                  </span>
-                  <span className="text-xs text-outline">
-                    Komisaris, Mitra Perkasa Teknik
-                  </span>
+                  <span className="text-sm font-semibold text-on-surface">P******</span>
+                  <span className="text-xs text-outline">Direktur</span>
                 </div>
               </div>
             </div>

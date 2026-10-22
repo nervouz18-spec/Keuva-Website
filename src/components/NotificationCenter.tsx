@@ -25,7 +25,7 @@ const SIMULATED_EVENTS: Omit<PushNotification, 'id' | 'timestamp' | 'unread'>[] 
   },
   {
     title: '🎉 Milestone Proyek Rilis',
-    message: 'Modul checkout 1-klik PT Mitra Perkasa Teknik berhasil diverifikasi dalam staging.',
+    message: 'Sistem registrasi Hackathon X Undana dengan pembayaran QRIS berhasil diverifikasi dalam staging.',
     type: 'launch',
   },
   {
