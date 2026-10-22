@@ -63,15 +63,15 @@ export const INITIAL_NOTIFICATIONS: PushNotification[] = [
   {
     id: 'notif-1',
     title: '⚡ Audit Performa Selesai',
-    message: 'Hasil audit Lighthouse website PT Finansia mencapai skor 99/100 dengan LCP 0.62s.',
+    message: 'Hasil audit Lighthouse Project Laba Pengadaan mencapai skor 99/100 dengan LCP 0.8s.',
     timestamp: '2 menit lalu',
     type: 'audit',
     unread: true,
   },
   {
     id: 'notif-2',
-    title: '🚀 Peluncuran Berhasil: AURA Label',
-    message: 'Platform Headless E-Commerce resmi Go-Live dengan integrasi Midtrans Gateway.',
+    title: '🚀 Peluncuran Berhasil: Keuva Keuangan',
+    message: 'Aplikasi manajemen keuangan pribadi resmi Go-Live dengan dasbor arus kas dan multi-tabungan.',
     timestamp: '18 menit lalu',
     type: 'launch',
     unread: true,
