@@ -1,3 +1,5 @@
+import { BUDGET_LABELS, PROJECT_TYPE_LABELS } from '../data/leadOptions';
+
 export type LeadSource = 'beranda' | 'kontak' | 'modal-konsultasi';
 export type LeadChannel = 'webhook' | 'whatsapp';
 
@@ -19,21 +21,6 @@ const SOURCE_LABELS: Record<LeadSource, string> = {
   beranda: 'Formulir Konsultasi Kilat (Beranda)',
   kontak: 'Formulir Permintaan Penawaran (Kontak)',
   'modal-konsultasi': 'Form Konsultasi',
-};
-
-const PROJECT_TYPE_LABELS: Record<string, string> = {
-  landing: 'Landing Page Konversi Tinggi',
-  compro: 'Company Profile',
-  ecommerce: 'Toko Online',
-  custom: 'Aplikasi Web Kustom / SaaS',
-  redesign: 'Redesain & Optimasi Kecepatan',
-};
-
-const BUDGET_LABELS: Record<string, string> = {
-  starter: 'Rp 1,5jt',
-  business: 'Rp 3,5jt',
-  system: 'Mulai Rp 6jt',
-  custom: 'Di atas Rp 10jt',
 };
 
 export function buildWhatsAppLink(payload: LeadPayload): string {

@@ -2,6 +2,7 @@ import { Icon } from './Icon';
 import { useAvailability } from '../hooks/useAvailability';
 import React, { useEffect } from 'react';
 import { useLeadForm } from '../hooks/useLeadForm';
+import { PROJECT_TYPE_OPTIONS } from '../data/leadOptions';
 
 interface KonsultasiModalProps {
   isOpen: boolean;
@@ -232,11 +233,11 @@ export const KonsultasiModal: React.FC<KonsultasiModalProps> = ({
                   onChange={(e) => setProjectType(e.target.value)}
                   className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm"
                 >
-                  <option value="landing">Landing Page Konversi Tinggi (Meta/Google Ads)</option>
-                  <option value="compro">Company Profile Profesional (B2B & Korporat)</option>
-                  <option value="ecommerce">Toko Online Modern (Fast Checkout & Midtrans)</option>
-                  <option value="custom">Aplikasi Web Kustom / SaaS Portal</option>
-                  <option value="redesign">Redesign & Optimasi Kecepatan (PageSpeed 95+)</option>
+                  {PROJECT_TYPE_OPTIONS.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
                 </select>
               </div>
 

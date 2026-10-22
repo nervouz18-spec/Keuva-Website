@@ -2,6 +2,7 @@ import { Icon } from './Icon';
 import React from 'react';
 import { useLeadForm } from '../hooks/useLeadForm';
 import { useAvailability } from '../hooks/useAvailability';
+import { BUDGET_OPTIONS, PROJECT_TYPE_OPTIONS } from '../data/leadOptions';
 
 export const KontakView: React.FC = () => {
   const lead = useLeadForm({ source: 'kontak' });
@@ -265,11 +266,11 @@ export const KontakView: React.FC = () => {
                     onChange={(e) => setProjectType(e.target.value)}
                       className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm"
                     >
-                      <option value="landing">Landing Page Konversi Tinggi (Iklan Ads)</option>
-                      <option value="compro">Company Profile Korporat / B2B</option>
-                      <option value="ecommerce">Toko Online Modern (Fast Checkout)</option>
-                      <option value="custom">Aplikasi Web / Platform SaaS Kustom</option>
-                      <option value="redesign">Redesain & Audit Kecepatan</option>
+                      {PROJECT_TYPE_OPTIONS.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
                   <div className="flex flex-col gap-1.5">
@@ -282,10 +283,11 @@ export const KontakView: React.FC = () => {
                       onChange={(e) => setBudget(e.target.value)}
                       className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm"
                     >
-                      <option value="starter">Rp 1,5jt (Starter Website)</option>
-                      <option value="business">Rp 3,5jt (Business Website)</option>
-                      <option value="system">Mulai Rp 6jt (Business System)</option>
-                      <option value="custom">Di atas Rp 10jt (Custom / Enterprise)</option>
+                      {BUDGET_OPTIONS.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
                     </select>
                   </div>
                 </div>

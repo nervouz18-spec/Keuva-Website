@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { NavTab } from '../types';
 import { LazyImage } from './LazyImage';
 import { useLeadForm } from '../hooks/useLeadForm';
+import { PROJECT_TYPE_OPTIONS } from '../data/leadOptions';
 
 interface BerandaViewProps {
   onTabChange: (tab: NavTab) => void;
@@ -1056,11 +1057,11 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                         value={formType}
                         onChange={(e) => setFormType(e.target.value)}
                       >
-                        <option value="landing">Landing Page Konversi Tinggi (Iklan Ads)</option>
-                        <option value="compro">Company Profile Profesional (B2B / Bisnis)</option>
-                        <option value="ecommerce">Toko Online Modern (Fast Checkout)</option>
-                        <option value="custom">Aplikasi Web Kustom / Portal SaaS</option>
-                        <option value="redesign">Redesain & Percepat Website Lama</option>
+                        {PROJECT_TYPE_OPTIONS.map((option) => (
+                          <option key={option.value} value={option.value}>
+                            {option.label}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
