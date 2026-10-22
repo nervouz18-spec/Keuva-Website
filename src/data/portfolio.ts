@@ -74,4 +74,26 @@ export const CASE_STUDIES: CaseStudy[] = [
     solution:
       'Seluruh modul berhasil diselesaikan dan berjalan baik — mulai dari registrasi, pembayaran QRIS, manajemen tim, hingga pemulihan akun.',
   },
+  {
+    id: 'sistem-perdataan-p3mi',
+    client: 'Kantor P3MI',
+    category: 'Web Aplikasi',
+    title: 'Sistem Perdataan Administrasi Kantor P3MI',
+    description:
+      'Aplikasi web untuk pengelolaan data dan administrasi kantor P3MI — pendataan, pencarian, dan pengarsipan data dalam satu sistem terpusat.',
+    metricBadge: 'Data Administrasi Terpusat',
+    loadSpeed: '0.8 detik',
+    imageUrl: '/images/proyek-4.svg',
+    imageAlt: 'Sistem Perdataan Kantor P3MI',
+    tags: ['React', 'TypeScript', 'Database', 'Admin Panel'],
+    results: [
+      { label: 'Penyimpanan Data', value: 'Terpusat' },
+      { label: 'Pencarian Data', value: 'Cepat' },
+      { label: 'Administrasi', value: 'Digital' },
+    ],
+    challenge:
+      'Data administrasi yang sebelumnya dicatat manual tersebar di banyak berkas, sehingga sulit dicari dan rawan duplikasi.',
+    solution:
+      'Membangun sistem perdataan terpusat dengan pencarian cepat, pengarsipan digital, dan panel admin untuk memudahkan pengelolaan data kantor.',
+  },
 ];

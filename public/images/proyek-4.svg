@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="Sistem Perdataan Kantor P3MI">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A1220"/>
+      <stop offset="0.55" stop-color="#101E36"/>
+      <stop offset="1" stop-color="#0D2A4A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4D8EFF"/>
+      <stop offset="1" stop-color="#38D6C4"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+
+  <circle cx="980" cy="150" r="260" fill="#4D8EFF" fill-opacity="0.10"/>
+  <circle cx="180" cy="680" r="220" fill="#38D6C4" fill-opacity="0.08"/>
+
+  <rect x="80" y="140" width="1040" height="520" rx="28" fill="#0E1B30" fill-opacity="0.72" stroke="#FFFFFF" stroke-opacity="0.10"/>
+
+  <g transform="translate(140 208)">
+    <rect width="120" height="120" rx="26" fill="url(#accent)" fill-opacity="0.18" stroke="#4D8EFF" stroke-opacity="0.5"/>
+    <g fill="none" stroke="url(#accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="30" y="26" width="60" height="68" rx="8"/>
+      <path d="M44 44h32M44 60h32M44 76h18"/>
+    </g>
+  </g>
+
+  <text x="290" y="262" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="700">Sistem Perdataan</text>
+  <text x="290" y="330" fill="url(#accent)" font-family="Segoe UI, Arial, sans-serif" font-size="58" font-weight="700">Kantor P3MI</text>
+
+  <text x="140" y="470" fill="#A9B7CC" font-family="Segoe UI, Arial, sans-serif" font-size="26">Pendataan, pencarian, dan pengarsipan data</text>
+  <text x="140" y="510" fill="#A9B7CC" font-family="Segoe UI, Arial, sans-serif" font-size="26">administrasi dalam satu sistem terpusat.</text>
+
+  <g transform="translate(140 560)">
+    <rect width="190" height="46" rx="23" fill="#4D8EFF" fill-opacity="0.16" stroke="#4D8EFF" stroke-opacity="0.5"/>
+    <text x="95" y="30" fill="#DCE8FF" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Data Terpusat</text>
+  </g>
+  <g transform="translate(350 560)">
+    <rect width="190" height="46" rx="23" fill="#38D6C4" fill-opacity="0.16" stroke="#38D6C4" stroke-opacity="0.5"/>
+    <text x="95" y="30" fill="#D6FFF9" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Pencarian Cepat</text>
+  </g>
+  <g transform="translate(560 560)">
+    <rect width="190" height="46" rx="23" fill="#FFFFFF" fill-opacity="0.07" stroke="#FFFFFF" stroke-opacity="0.3"/>
+    <text x="95" y="30" fill="#E6ECF5" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Panel Admin</text>
+  </g>
+</svg>

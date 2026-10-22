@@ -811,7 +811,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                   ))}
                 </div>
                 <p className="text-sm text-on-surface-variant italic leading-relaxed">
-                  “Registrasi peserta, pembayaran QRIS, sampai manajemen tim berjalan mulus dalam satu sistem. Panel admin memudahkan kami memantau pendaftaran, dan fitur reset password lewat Gmail API menghemat banyak waktu panitia.”
+                  “Registrasi peserta Hackathon X Undana, pembayaran QRIS, sampai manajemen tim berjalan mulus dalam satu sistem. Panel admin memudahkan kami memantau pendaftaran, dan fitur reset password lewat Gmail API menghemat banyak waktu panitia.”
                 </p>
               </div>
               <div className="flex items-center gap-3 pt-6 mt-6 border-t border-line">
