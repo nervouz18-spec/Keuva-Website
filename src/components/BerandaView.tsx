@@ -399,36 +399,36 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
             <div className="lg:col-span-7 p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-lg border border-line group">
               <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-5 bg-surface-container">
                 <LazyImage
-                  src="/images/case-fintech.webp"
-                  alt="PT Finansia Solusi Nusantara web architecture"
+                  src="/images/proyek-1.png"
+                  alt="Project Laba Pengadaan - sistem kalkulasi pajak dan laba"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-xs text-primary font-bold border border-line-strong">
-                  Fintech & B2B SaaS
+                  Web Aplikasi
                 </div>
               </div>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <span className="px-2.5 py-1 rounded bg-tertiary-container/25 text-tertiary text-xs font-bold">
-                    +240% Pertumbuhan Leads
+                    Pajak & PPN Otomatis
                   </span>
-                  <span className="text-outline text-xs">Waktu Muat: 0.62 detik</span>
+                  <span className="text-outline text-xs">Waktu Muat: 0.8 detik</span>
                 </div>
                 <h3 className="font-display text-xl text-on-surface font-bold">
-                  PT Finansia Solusi Nusantara - Arsitektur Web Portal B2B
+                  Project Laba Pengadaan - Kalkulasi Pajak & Laba Otomatis
                 </h3>
                 <p className="text-sm text-on-surface-variant leading-relaxed">
-                  Pembaruan menyeluruh struktur visual dan performa tech-stack menghasilkan peningkatan drastis pada formulir reservasi demo institusional dari eksekutif perbankan nasional.
+                  Sistem kalkulasi laba pengadaan yang memisahkan input data pajak & PPN ke dalam dokumen tersendiri, lalu mengalirkannya otomatis ke kalkulator keuntungan.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   <span className="px-2.5 py-1 rounded bg-surface-container text-xs text-outline border border-line">
-                    Next.js 14
+                    React
                   </span>
                   <span className="px-2.5 py-1 rounded bg-surface-container text-xs text-outline border border-line">
-                    HubSpot CRM Sync
+                    TypeScript
                   </span>
                   <span className="px-2.5 py-1 rounded bg-surface-container text-xs text-outline border border-line">
-                    Tailwind CSS
+                    Kalkulasi Otomatis
                   </span>
                 </div>
               </div>
@@ -438,33 +438,33 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
             <div className="lg:col-span-5 p-6 rounded-2xl bg-surface-container-low flex flex-col justify-between shadow-lg border border-line group">
               <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden mb-5 bg-surface-container">
                 <LazyImage
-                  src="/images/case-ecommerce.webp"
-                  alt="AURA Label fast online store redesign"
+                  src="/images/proyek-2.png"
+                  alt="Keuva Keuangan - aplikasi manajemen keuangan pribadi"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-xs text-secondary font-bold border border-line-strong">
-                  Luxury DTC E-Commerce
+                  Aplikasi Keuangan
                 </div>
               </div>
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <span className="px-2.5 py-1 rounded bg-primary-container/20 text-primary text-xs font-bold">
-                    +185% Nilai Checkout
+                    Semua Keuangan dalam 1 Dasbor
                   </span>
-                  <span className="text-outline text-xs">Bounce Rate: Turun 42%</span>
+                  <span className="text-outline text-xs">Waktu Muat: 0.8 detik</span>
                 </div>
                 <h3 className="font-display text-xl text-on-surface font-bold">
-                  AURA Label - Replatforming Toko Online & Fast Checkout
+                  Keuva Keuangan - Manajemen Keuangan Pribadi
                 </h3>
                 <p className="text-sm text-on-surface-variant leading-relaxed">
-                  Redesain toko daring berfokus pada checkout kilat 1-klik dan pengalaman katalog visual mobile interaktif dengan zero lag.
+                  Aplikasi pengelolaan keuangan pribadi untuk memantau tagihan bulanan, pengeluaran harian hingga bulanan, arus kas, dan berbagai jenis tabungan.
                 </p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   <span className="px-2.5 py-1 rounded bg-surface-container text-xs text-outline border border-line">
-                    Headless Shopify
+                    React
                   </span>
                   <span className="px-2.5 py-1 rounded bg-surface-container text-xs text-outline border border-line">
-                    Midtrans Gateway
+                    Data Visualization
                   </span>
                 </div>
               </div>
@@ -474,29 +474,29 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
             <div className="lg:col-span-12 p-6 md:p-8 rounded-2xl bg-surface-container-high flex flex-col lg:flex-row items-center gap-8 shadow-xl border border-line-strong">
               <div className="w-full lg:w-1/2 relative h-64 md:h-80 rounded-xl overflow-hidden bg-surface-container">
                 <LazyImage
-                  src="/images/case-industry.webp"
-                  alt="PT Mitra Perkasa Teknik Heavy Industry"
+                  src="/images/proyek-3.png"
+                  alt="Hackathon X Undana - sistem registrasi event dan QRIS"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="w-full lg:w-1/2 flex flex-col gap-4">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-tertiary-container/25 text-tertiary text-xs font-semibold self-start">
-                  Manufaktur & Heavy Industry
+                  Registrasi & Admin System
                 </div>
                 <h3 className="font-display text-2xl md:text-3xl text-on-surface font-bold">
-                  PT Mitra Perkasa Teknik - Company Profile Ekspor Internasional
+                  Hackathon X Undana - Registrasi Event & QRIS
                 </h3>
                 <p className="text-sm text-on-surface-variant leading-relaxed">
-                  Mentransformasi profil perusahaan konvensional menjadi etalase kapabilitas industri multibahasa yang dipercaya buyer dari 7 negara mitra di Asia Pasifik.
+                  Sistem registrasi event hackathon lengkap dengan pembayaran QRIS, panel admin & peserta, manajemen tim, dan pemulihan kata sandi via Gmail API.
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-2">
                   <div className="p-4 rounded-xl bg-surface-container border border-line">
-                    <span className="font-display text-xl font-bold text-primary">#1 Rank</span>
-                    <p className="text-xs text-outline mt-1">Google Keyword Industri Utama</p>
+                    <span className="font-display text-xl font-bold text-primary">QRIS</span>
+                    <p className="text-xs text-outline mt-1">Pembayaran Otomatis</p>
                   </div>
                   <div className="p-4 rounded-xl bg-surface-container border border-line">
-                    <span className="font-display text-xl font-bold text-tertiary">300%</span>
-                    <p className="text-xs text-outline mt-1">Kenaikan Lead Enquiry Ekspor</p>
+                    <span className="font-display text-xl font-bold text-tertiary">2 Panel</span>
+                    <p className="text-xs text-outline mt-1">Admin & Peserta</p>
                   </div>
                 </div>
               </div>
