@@ -939,7 +939,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                 <div className="pt-2">
                   <a
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-surface-container-low text-on-surface text-xs font-semibold hover:text-tertiary transition-colors border border-line"
-                    href="https://wa.me/6281298432865"
+                    href="https://wa.me/6282210676797"
                     rel="noopener noreferrer"
                     target="_blank"
                   >
@@ -1018,7 +1018,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
                         <input
                           className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface placeholder:text-outline/50 border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-mono"
                           id="clientWa"
-                          placeholder="Contoh: 081298432865"
+                          placeholder="Contoh: 082210676797"
                           required
                           type="tel"
                           value={formWa}

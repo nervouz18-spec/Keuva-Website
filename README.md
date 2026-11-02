@@ -244,7 +244,7 @@ FallbackResource /index.html
 
 ## Kontak
 
-- **WhatsApp:** [+62 812-9843-2865](https://wa.me/6281298432865)
+- **WhatsApp:** [+62 822-1067-6797](https://wa.me/6282210676797)
 - **Email:** [taufiqrahmanprasetyo@gmail.com](mailto:taufiqrahmanprasetyo@gmail.com)
 
 ## Lisensi

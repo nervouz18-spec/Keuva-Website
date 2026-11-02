@@ -906,7 +906,7 @@ export const LayananView: React.FC<LayananViewProps> = ({
                 <span>Jadwalkan Konsultasi Gratis</span>
               </button>
               <a
-                href="https://wa.me/6281298432865"
+                href="https://wa.me/6282210676797"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-surface-container text-on-surface font-semibold text-sm hover:bg-surface-container-highest transition-all border border-line"

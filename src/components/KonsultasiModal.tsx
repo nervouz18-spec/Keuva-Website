@@ -203,7 +203,7 @@ export const KonsultasiModal: React.FC<KonsultasiModalProps> = ({
                     required
                     value={wa}
                     onChange={(e) => setWa(e.target.value)}
-                    placeholder="Contoh: 081298432865"
+                    placeholder="Contoh: 082210676797"
                     className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface placeholder:text-outline/60 border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-mono"
                   />
                 </div>

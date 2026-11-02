@@ -73,12 +73,12 @@ export const KontakView: React.FC = () => {
                     WhatsApp Bisnis Studio
                   </span>
                   <a
-                    href="https://wa.me/6281298432865"
+                    href="https://wa.me/6282210676797"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block text-sm font-semibold text-on-surface hover:text-tertiary transition-colors"
                   >
-                    +62 812-9843-2865
+                    +62 822-1067-6797
                   </a>
                   <span className="text-xs text-outline">Respon rata-rata &lt; 15 menit</span>
                 </div>
@@ -235,7 +235,7 @@ export const KontakView: React.FC = () => {
                       required
                       value={wa}
                       onChange={(e) => setWa(e.target.value)}
-                      placeholder="081298432865"
+                      placeholder="082210676797"
                       className="px-4 py-2.5 rounded-xl bg-surface-container text-on-surface placeholder:text-outline/50 border border-line-strong focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-mono"
                     />
                   </div>

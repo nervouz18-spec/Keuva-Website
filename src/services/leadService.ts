@@ -13,7 +13,7 @@ export interface LeadPayload {
   budget?: string;
 }
 
-export const STUDIO_WA_NUMBER = '6281298432865';
+export const STUDIO_WA_NUMBER = '6282210676797';
 
 const WEBHOOK_URL: string | undefined = import.meta.env.VITE_LEADS_WEBHOOK_URL;
 
