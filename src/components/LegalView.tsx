@@ -15,7 +15,7 @@ interface LegalContent {
   sections: LegalSection[];
 }
 
-const CONTACT_EMAIL = 'taufiqrahmanprasetyo@gmail.com';
+const CONTACT_EMAIL = 'appskeuva@gmail.com';
 
 const CONTENT: Record<LegalKind, LegalContent> = {
   privacy: {

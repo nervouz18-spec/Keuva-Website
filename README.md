@@ -245,7 +245,7 @@ FallbackResource /index.html
 ## Kontak
 
 - **WhatsApp:** [+62 822-1067-6797](https://wa.me/6282210676797)
-- **Email:** [taufiqrahmanprasetyo@gmail.com](mailto:taufiqrahmanprasetyo@gmail.com)
+- **Email:** [appskeuva@gmail.com](mailto:appskeuva@gmail.com)
 
 ## Lisensi
 

@@ -93,10 +93,10 @@ export const KontakView: React.FC = () => {
                     Email Permintaan Proposal
                   </span>
                   <a
-                    href="mailto:taufiqrahmanprasetyo@gmail.com"
+                    href="mailto:appskeuva@gmail.com"
                     className="block text-sm font-semibold text-on-surface hover:text-tertiary transition-colors"
                   >
-                    taufiqrahmanprasetyo@gmail.com
+                    appskeuva@gmail.com
                   </a>
                   <span className="text-xs text-outline">Proposal dikirim dalam 24 jam</span>
                 </div>
