@@ -118,7 +118,7 @@ export const BerandaView: React.FC<BerandaViewProps> = ({
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 w-full pt-6 bg-surface-container-low/70 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-line">
               <div className="flex flex-col items-center">
                 <span className="font-display text-2xl md:text-3xl font-bold text-primary tabular-nums">
-                  150+
+                  12
                 </span>
                 <span className="text-xs text-outline mt-1">Website Diluncurkan</span>
               </div>
